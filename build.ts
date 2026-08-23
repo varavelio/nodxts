@@ -17,6 +17,7 @@ await build({
     name: "@varavel/nodx",
     description: "NodX implementation for TypeScript",
     version: Deno.args[0],
+    sideEffects: false,
     license: "MIT",
     author: "Varavel",
     homepage: "https://github.com/varavelio/nodxts",
