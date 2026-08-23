@@ -1,5 +1,7 @@
 import { assertEquals } from "@std/assert";
 import { Attr, AttrBool, AttrList, AttrNode } from "./attribute.ts";
+import { Checked, Disabled } from "./generated/attributes.ts";
+import { Div } from "./generated/elements.ts";
 
 Deno.test("Attr renders a name/value attribute", () => {
   assertEquals(Attr("class", "card").render(), `class="card"`);
@@ -56,4 +58,15 @@ Deno.test("Attribute nodes identify themselves as attributes", () => {
 
 Deno.test("Attribute nodes stringify to their rendered output", () => {
   assertEquals(String(Attr("key", "value")), `key="value"`);
+});
+
+Deno.test("AttrBool defaults to true when value is omitted", () => {
+  assertEquals(AttrBool("checked").render(), "checked");
+  assertEquals(AttrBool("disabled").render(), "disabled");
+  assertEquals(Checked().render(), "checked");
+  assertEquals(Disabled().render(), "disabled");
+  assertEquals(Checked(true).render(), "checked");
+  assertEquals(Checked(false).render(), "");
+  assertEquals(Div(Checked()).render(), "<div checked></div>");
+  assertEquals(Div(Disabled(false)).render(), "<div></div>");
 });

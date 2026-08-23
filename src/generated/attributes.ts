@@ -120,7 +120,10 @@ export function Allow(value: AttributeValue): AttrNode {
  * ```ts
  * import { Allowfullscreen, Input } from "@varavel/nodx";
  *
- * const node = Input(Allowfullscreen(true));
+ * const node = Input(Allowfullscreen());
+ * // Renders as: <input allowfullscreen>
+ *
+ * const explicit = Input(Allowfullscreen(true));
  * // Renders as: <input allowfullscreen>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -128,7 +131,7 @@ export function Allow(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Allowfullscreen(value: boolean): Node {
+export function Allowfullscreen(value: boolean = true): Node {
   return AttrBool("allowfullscreen", value);
 }
 
@@ -202,7 +205,10 @@ export function As(value: AttributeValue): AttrNode {
  * ```ts
  * import { Async, Input } from "@varavel/nodx";
  *
- * const node = Input(Async(true));
+ * const node = Input(Async());
+ * // Renders as: <input async>
+ *
+ * const explicit = Input(Async(true));
  * // Renders as: <input async>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -210,7 +216,7 @@ export function As(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Async(value: boolean): Node {
+export function Async(value: boolean = true): Node {
   return AttrBool("async", value);
 }
 
@@ -268,7 +274,10 @@ export function Autocorrect(value: AttributeValue): AttrNode {
  * ```ts
  * import { Autofocus, Input } from "@varavel/nodx";
  *
- * const node = Input(Autofocus(true));
+ * const node = Input(Autofocus());
+ * // Renders as: <input autofocus>
+ *
+ * const explicit = Input(Autofocus(true));
  * // Renders as: <input autofocus>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -276,7 +285,7 @@ export function Autocorrect(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Autofocus(value: boolean): Node {
+export function Autofocus(value: boolean = true): Node {
   return AttrBool("autofocus", value);
 }
 
@@ -287,7 +296,10 @@ export function Autofocus(value: boolean): Node {
  * ```ts
  * import { Autoplay, Input } from "@varavel/nodx";
  *
- * const node = Input(Autoplay(true));
+ * const node = Input(Autoplay());
+ * // Renders as: <input autoplay>
+ *
+ * const explicit = Input(Autoplay(true));
  * // Renders as: <input autoplay>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -295,7 +307,7 @@ export function Autofocus(value: boolean): Node {
  * // Renders as: <input>
  * ```
  */
-export function Autoplay(value: boolean): Node {
+export function Autoplay(value: boolean = true): Node {
   return AttrBool("autoplay", value);
 }
 
@@ -516,7 +528,10 @@ export function Charset(value: AttributeValue): AttrNode {
  * ```ts
  * import { Checked, Input } from "@varavel/nodx";
  *
- * const node = Input(Checked(true));
+ * const node = Input(Checked());
+ * // Renders as: <input checked>
+ *
+ * const explicit = Input(Checked(true));
  * // Renders as: <input checked>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -524,7 +539,7 @@ export function Charset(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Checked(value: boolean): Node {
+export function Checked(value: boolean = true): Node {
   return AttrBool("checked", value);
 }
 
@@ -747,7 +762,10 @@ export function Contextmenu(value: AttributeValue): AttrNode {
  * ```ts
  * import { Controls, Input } from "@varavel/nodx";
  *
- * const node = Input(Controls(true));
+ * const node = Input(Controls());
+ * // Renders as: <input controls>
+ *
+ * const explicit = Input(Controls(true));
  * // Renders as: <input controls>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -755,7 +773,7 @@ export function Contextmenu(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Controls(value: boolean): Node {
+export function Controls(value: boolean = true): Node {
   return AttrBool("controls", value);
 }
 
@@ -889,7 +907,10 @@ export function Decoding(value: AttributeValue): AttrNode {
  * ```ts
  * import { Default, Input } from "@varavel/nodx";
  *
- * const node = Input(Default(true));
+ * const node = Input(Default());
+ * // Renders as: <input default>
+ *
+ * const explicit = Input(Default(true));
  * // Renders as: <input default>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -897,7 +918,7 @@ export function Decoding(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Default(value: boolean): Node {
+export function Default(value: boolean = true): Node {
   return AttrBool("default", value);
 }
 
@@ -908,7 +929,10 @@ export function Default(value: boolean): Node {
  * ```ts
  * import { Defer, Input } from "@varavel/nodx";
  *
- * const node = Input(Defer(true));
+ * const node = Input(Defer());
+ * // Renders as: <input defer>
+ *
+ * const explicit = Input(Defer(true));
  * // Renders as: <input defer>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -916,7 +940,7 @@ export function Default(value: boolean): Node {
  * // Renders as: <input>
  * ```
  */
-export function Defer(value: boolean): Node {
+export function Defer(value: boolean = true): Node {
   return AttrBool("defer", value);
 }
 
@@ -957,7 +981,10 @@ export function Dirname(value: AttributeValue): AttrNode {
  * ```ts
  * import { Disabled, Input } from "@varavel/nodx";
  *
- * const node = Input(Disabled(true));
+ * const node = Input(Disabled());
+ * // Renders as: <input disabled>
+ *
+ * const explicit = Input(Disabled(true));
  * // Renders as: <input disabled>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -965,7 +992,7 @@ export function Dirname(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Disabled(value: boolean): Node {
+export function Disabled(value: boolean = true): Node {
   return AttrBool("disabled", value);
 }
 
@@ -1171,7 +1198,10 @@ export function Formmethod(value: AttributeValue): AttrNode {
  * ```ts
  * import { Formnovalidate, Input } from "@varavel/nodx";
  *
- * const node = Input(Formnovalidate(true));
+ * const node = Input(Formnovalidate());
+ * // Renders as: <input formnovalidate>
+ *
+ * const explicit = Input(Formnovalidate(true));
  * // Renders as: <input formnovalidate>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1179,7 +1209,7 @@ export function Formmethod(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Formnovalidate(value: boolean): Node {
+export function Formnovalidate(value: boolean = true): Node {
   return AttrBool("formnovalidate", value);
 }
 
@@ -1432,7 +1462,10 @@ export function Importance(value: AttributeValue): AttrNode {
  * ```ts
  * import { Inert, Input } from "@varavel/nodx";
  *
- * const node = Input(Inert(true));
+ * const node = Input(Inert());
+ * // Renders as: <input inert>
+ *
+ * const explicit = Input(Inert(true));
  * // Renders as: <input inert>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1440,7 +1473,7 @@ export function Importance(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Inert(value: boolean): Node {
+export function Inert(value: boolean = true): Node {
   return AttrBool("inert", value);
 }
 
@@ -1481,7 +1514,10 @@ export function Integrity(value: AttributeValue): AttrNode {
  * ```ts
  * import { Ismap, Input } from "@varavel/nodx";
  *
- * const node = Input(Ismap(true));
+ * const node = Input(Ismap());
+ * // Renders as: <input ismap>
+ *
+ * const explicit = Input(Ismap(true));
  * // Renders as: <input ismap>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1489,7 +1525,7 @@ export function Integrity(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Ismap(value: boolean): Node {
+export function Ismap(value: boolean = true): Node {
   return AttrBool("ismap", value);
 }
 
@@ -1547,7 +1583,10 @@ export function Itemref(value: AttributeValue): AttrNode {
  * ```ts
  * import { Itemscope, Input } from "@varavel/nodx";
  *
- * const node = Input(Itemscope(true));
+ * const node = Input(Itemscope());
+ * // Renders as: <input itemscope>
+ *
+ * const explicit = Input(Itemscope(true));
  * // Renders as: <input itemscope>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1555,7 +1594,7 @@ export function Itemref(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Itemscope(value: boolean): Node {
+export function Itemscope(value: boolean = true): Node {
   return AttrBool("itemscope", value);
 }
 
@@ -1703,7 +1742,10 @@ export function Longdesc(value: AttributeValue): AttrNode {
  * ```ts
  * import { Loop, Input } from "@varavel/nodx";
  *
- * const node = Input(Loop(true));
+ * const node = Input(Loop());
+ * // Renders as: <input loop>
+ *
+ * const explicit = Input(Loop(true));
  * // Renders as: <input loop>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1711,7 +1753,7 @@ export function Longdesc(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Loop(value: boolean): Node {
+export function Loop(value: boolean = true): Node {
   return AttrBool("loop", value);
 }
 
@@ -1872,7 +1914,10 @@ export function Minlength(value: AttributeValue): AttrNode {
  * ```ts
  * import { Multiple, Input } from "@varavel/nodx";
  *
- * const node = Input(Multiple(true));
+ * const node = Input(Multiple());
+ * // Renders as: <input multiple>
+ *
+ * const explicit = Input(Multiple(true));
  * // Renders as: <input multiple>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1880,7 +1925,7 @@ export function Minlength(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Multiple(value: boolean): Node {
+export function Multiple(value: boolean = true): Node {
   return AttrBool("multiple", value);
 }
 
@@ -1891,7 +1936,10 @@ export function Multiple(value: boolean): Node {
  * ```ts
  * import { Muted, Input } from "@varavel/nodx";
  *
- * const node = Input(Muted(true));
+ * const node = Input(Muted());
+ * // Renders as: <input muted>
+ *
+ * const explicit = Input(Muted(true));
  * // Renders as: <input muted>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1899,7 +1947,7 @@ export function Multiple(value: boolean): Node {
  * // Renders as: <input>
  * ```
  */
-export function Muted(value: boolean): Node {
+export function Muted(value: boolean = true): Node {
   return AttrBool("muted", value);
 }
 
@@ -1940,7 +1988,10 @@ export function Nohref(value: AttributeValue): AttrNode {
  * ```ts
  * import { Nomodule, Input } from "@varavel/nodx";
  *
- * const node = Input(Nomodule(true));
+ * const node = Input(Nomodule());
+ * // Renders as: <input nomodule>
+ *
+ * const explicit = Input(Nomodule(true));
  * // Renders as: <input nomodule>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -1948,7 +1999,7 @@ export function Nohref(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Nomodule(value: boolean): Node {
+export function Nomodule(value: boolean = true): Node {
   return AttrBool("nomodule", value);
 }
 
@@ -2004,7 +2055,10 @@ export function Noshade(value: AttributeValue): AttrNode {
  * ```ts
  * import { Novalidate, Input } from "@varavel/nodx";
  *
- * const node = Input(Novalidate(true));
+ * const node = Input(Novalidate());
+ * // Renders as: <input novalidate>
+ *
+ * const explicit = Input(Novalidate(true));
  * // Renders as: <input novalidate>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -2012,7 +2066,7 @@ export function Noshade(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Novalidate(value: boolean): Node {
+export function Novalidate(value: boolean = true): Node {
   return AttrBool("novalidate", value);
 }
 
@@ -3373,7 +3427,10 @@ export function Onwheel(value: AttributeValue): AttrNode {
  * ```ts
  * import { Open, Input } from "@varavel/nodx";
  *
- * const node = Input(Open(true));
+ * const node = Input(Open());
+ * // Renders as: <input open>
+ *
+ * const explicit = Input(Open(true));
  * // Renders as: <input open>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -3381,7 +3438,7 @@ export function Onwheel(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Open(value: boolean): Node {
+export function Open(value: boolean = true): Node {
   return AttrBool("open", value);
 }
 
@@ -3471,7 +3528,10 @@ export function Placeholder(value: AttributeValue): AttrNode {
  * ```ts
  * import { Playsinline, Input } from "@varavel/nodx";
  *
- * const node = Input(Playsinline(true));
+ * const node = Input(Playsinline());
+ * // Renders as: <input playsinline>
+ *
+ * const explicit = Input(Playsinline(true));
  * // Renders as: <input playsinline>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -3479,7 +3539,7 @@ export function Placeholder(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Playsinline(value: boolean): Node {
+export function Playsinline(value: boolean = true): Node {
   return AttrBool("playsinline", value);
 }
 
@@ -3580,7 +3640,10 @@ export function Radiogroup(value: AttributeValue): AttrNode {
  * ```ts
  * import { Readonly, Input } from "@varavel/nodx";
  *
- * const node = Input(Readonly(true));
+ * const node = Input(Readonly());
+ * // Renders as: <input readonly>
+ *
+ * const explicit = Input(Readonly(true));
  * // Renders as: <input readonly>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -3588,7 +3651,7 @@ export function Radiogroup(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Readonly(value: boolean): Node {
+export function Readonly(value: boolean = true): Node {
   return AttrBool("readonly", value);
 }
 
@@ -3631,7 +3694,10 @@ export function Rel(
  * ```ts
  * import { Required, Input } from "@varavel/nodx";
  *
- * const node = Input(Required(true));
+ * const node = Input(Required());
+ * // Renders as: <input required>
+ *
+ * const explicit = Input(Required(true));
  * // Renders as: <input required>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -3639,7 +3705,7 @@ export function Rel(
  * // Renders as: <input>
  * ```
  */
-export function Required(value: boolean): Node {
+export function Required(value: boolean = true): Node {
   return AttrBool("required", value);
 }
 
@@ -3665,7 +3731,10 @@ export function Results(value: AttributeValue): AttrNode {
  * ```ts
  * import { Reversed, Input } from "@varavel/nodx";
  *
- * const node = Input(Reversed(true));
+ * const node = Input(Reversed());
+ * // Renders as: <input reversed>
+ *
+ * const explicit = Input(Reversed(true));
  * // Renders as: <input reversed>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -3673,7 +3742,7 @@ export function Results(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Reversed(value: boolean): Node {
+export function Reversed(value: boolean = true): Node {
   return AttrBool("reversed", value);
 }
 
@@ -3806,7 +3875,10 @@ export function Scrolling(value: AttributeValue): AttrNode {
  * ```ts
  * import { Selected, Input } from "@varavel/nodx";
  *
- * const node = Input(Selected(true));
+ * const node = Input(Selected());
+ * // Renders as: <input selected>
+ *
+ * const explicit = Input(Selected(true));
  * // Renders as: <input selected>
  *
  * // When the value is `false`, the attribute is omitted entirely:
@@ -3814,7 +3886,7 @@ export function Scrolling(value: AttributeValue): AttrNode {
  * // Renders as: <input>
  * ```
  */
-export function Selected(value: boolean): Node {
+export function Selected(value: boolean = true): Node {
   return AttrBool("selected", value);
 }
 

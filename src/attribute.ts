@@ -133,9 +133,12 @@ export function Attr(name: string, value?: AttributeValue): AttrNode {
  * Creates a new node representing an HTML boolean attribute.
  *
  * Boolean attributes (like `checked`, `disabled` or `required`) take no
- * value: they either appear or disappear. If the value is `true`, the
- * attribute is rendered as just its name (e.g. `disabled`). If the value is
- * `false`, the attribute is omitted entirely.
+ * value: they either appear or disappear. If the value is `true` (the
+ * default), the attribute is rendered as just its name (e.g. `disabled`).
+ * If the value is `false`, the attribute is omitted entirely.
+ *
+ * The value is optional so `Disabled()` is the same as `Disabled(true)` and
+ * reads more ergonomically for the common “enabled” case.
  *
  * @example Usage
  * ```ts
@@ -144,14 +147,15 @@ export function Attr(name: string, value?: AttributeValue): AttrNode {
  * import { assertEquals } from "@std/assert";
  *
  * assertEquals(El("input", AttrBool("checked", true)).render(), "<input checked>");
+ * assertEquals(El("input", AttrBool("checked")).render(), "<input checked>");
  * assertEquals(El("input", AttrBool("checked", false)).render(), "<input>");
  * ```
  *
  * @param name The attribute name.
- * @param value Whether the attribute should be rendered at all.
+ * @param value Whether the attribute should be rendered at all. Defaults to `true`.
  * @returns An attribute node, or a node that renders nothing.
  */
-export function AttrBool(name: string, value: boolean): Node {
+export function AttrBool(name: string, value: boolean = true): Node {
   if (!value) {
     return NOOP_NODE;
   }

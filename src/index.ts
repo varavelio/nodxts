@@ -50,7 +50,7 @@ export { Group, GroupNode } from "./group.ts";
 // Conditional helpers.
 export { ClassMap, type ClassMapInput } from "./class_map.ts";
 export { StyleMap, type StyleMapInput } from "./style_map.ts";
-export { Each, If } from "./conditional.ts";
+export { Eval, If, Map } from "./conditional.ts";
 
 // Special nodes.
 export { DocType } from "./doctype.ts";
