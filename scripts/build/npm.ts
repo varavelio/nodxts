@@ -1,5 +1,6 @@
 import { build, emptyDir, LibName } from "@deno/dnt";
 import { fromRoot } from "./helpers.ts";
+import denoJson from "../../deno.json" with { type: "json" };
 
 export async function buildNpmPackage() {
   await emptyDir(fromRoot("./npm"));
@@ -18,7 +19,7 @@ export async function buildNpmPackage() {
     package: {
       name: "@varavel/nodx",
       description: "NodX implementation for TypeScript",
-      version: "0.0.0",
+      version: denoJson.version,
       sideEffects: false,
       license: "MIT",
       author: "Varavel",
