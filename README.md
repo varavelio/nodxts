@@ -456,6 +456,14 @@ need to think about it - autocomplete shows you the right one.
 If your page is mostly server-rendered and you want safety without learning a new templating
 language, NodX fits well.
 
+## Documentation
+
+Full API reference — every element, attribute, helper and type, with examples — is on JSR:
+
+**https://jsr.io/@varavel/nodx/doc**
+
+If you want to browse what's available or check a specific tag's signature, start there.
+
 ## Tailwind CSS
 
 Get autocomplete for classes inside `Class(...)` and `ClassMap({...})` by adding this to your VS
