@@ -21,6 +21,9 @@ export async function buildNpmPackage() {
       description: "NodX implementation for TypeScript",
       version: denoJson.version,
       sideEffects: false,
+      publishConfig: {
+        access: "public",
+      },
       license: "MIT",
       author: "Varavel",
       homepage: "https://github.com/varavelio/nodxts",
