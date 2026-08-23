@@ -1,10 +1,22 @@
 import { build, emptyDir, LibName } from "@deno/dnt";
+import { dirname, fromFileUrl, join } from "@std/path";
 
-await emptyDir("./npm");
+/**
+ * Converts any path relative to workspace root and returns its absolute url.
+ *
+ * @param relativePath The path relative to workspace root
+ * @returns The absolute path
+ */
+const fromRoot = (relativePath: string) => {
+  const scriptDir = dirname(fromFileUrl(import.meta.url));
+  return join(scriptDir, "..", relativePath);
+};
+
+await emptyDir(fromRoot("./npm"));
 
 await build({
-  entryPoints: ["./src/main.ts"],
-  outDir: "./npm",
+  entryPoints: [fromRoot("./src/main.ts")],
+  outDir: fromRoot("./npm"),
   shims: {
     deno: "dev",
   },
@@ -40,7 +52,7 @@ await build({
     ],
   },
   postBuild() {
-    Deno.copyFileSync("LICENSE", "npm/LICENSE");
-    Deno.copyFileSync("README.md", "npm/README.md");
+    Deno.copyFileSync(fromRoot("./LICENSE"), fromRoot("./npm/LICENSE"));
+    Deno.copyFileSync(fromRoot("./README.md"), fromRoot("./npm/README.md"));
   },
 });
