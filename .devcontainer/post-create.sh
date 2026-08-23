@@ -5,6 +5,8 @@ cat << 'EOF' >> /root/.bashrc
 
 # Define command aliases
 alias ll='ls -alh'
+alias task='deno task'
+alias t='deno task'
 alias c='clear'
 
 # Set the user file-creation mode mask to 000
