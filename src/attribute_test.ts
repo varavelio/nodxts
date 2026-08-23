@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { Attr, AttrBool, AttributeNode, AttrList } from "./attribute.ts";
+import { Attr, AttrBool, AttrList, AttrNode } from "./attribute.ts";
 
 Deno.test("Attr renders a name/value attribute", () => {
   assertEquals(Attr("class", "card").render(), `class="card"`);
@@ -24,7 +24,7 @@ Deno.test("Attr supports numeric values", () => {
 
 Deno.test("Attr renders value-less attributes as bare names", () => {
   assertEquals(Attr("disabled").render(), "disabled");
-  assertEquals(new AttributeNode("checked").hasValue, false);
+  assertEquals(new AttrNode("checked").hasValue, false);
 });
 
 Deno.test("Attr with an empty name renders nothing", () => {

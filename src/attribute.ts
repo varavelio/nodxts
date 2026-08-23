@@ -20,17 +20,17 @@ import { NOOP_NODE } from "./group.ts";
  *
  * @example Usage
  * ```ts
- * import { AttributeNode } from "./attribute.ts";
+ * import { AttrNode } from "./attribute.ts";
  * import { assertEquals } from "@std/assert";
  *
- * const node = new AttributeNode("href", "/home", true);
+ * const node = new AttrNode("href", "/home", true);
  * assertEquals(node.render(), `href="/home"`);
  *
- * const valueless = new AttributeNode("disabled");
+ * const valueless = new AttrNode("disabled");
  * assertEquals(valueless.render(), "disabled");
  * ```
  */
-export class AttributeNode implements Node {
+export class AttrNode implements Node {
   /** The attribute name (e.g. `class`, `href`). */
   readonly name: string;
 
@@ -97,7 +97,7 @@ export class AttributeNode implements Node {
   }
 
   /**
-   * Returns the rendered attribute, mirroring {@linkcode AttributeNode.render}.
+   * Returns the rendered attribute, mirroring {@linkcode AttrNode.render}.
    *
    * @returns The rendered attribute.
    */
@@ -125,8 +125,8 @@ export class AttributeNode implements Node {
  * @param value The optional attribute value.
  * @returns An attribute node.
  */
-export function Attr(name: string, value?: AttributeValue): AttributeNode {
-  return new AttributeNode(name, value);
+export function Attr(name: string, value?: AttributeValue): AttrNode {
+  return new AttrNode(name, value);
 }
 
 /**
@@ -155,7 +155,7 @@ export function AttrBool(name: string, value: boolean): Node {
   if (!value) {
     return NOOP_NODE;
   }
-  return new AttributeNode(name);
+  return new AttrNode(name);
 }
 
 /**
@@ -182,7 +182,7 @@ export function AttrBool(name: string, value: boolean): Node {
 export function AttrList(
   name: string,
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   const tokens: string[] = [];
 
   for (const value of values) {
@@ -192,5 +192,5 @@ export function AttrList(
     }
   }
 
-  return new AttributeNode(name, tokens.join(" "));
+  return new AttrNode(name, tokens.join(" "));
 }

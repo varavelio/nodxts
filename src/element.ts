@@ -7,7 +7,7 @@
  * @module
  */
 
-import type { AttributeNode } from "./attribute.ts";
+import type { AttrNode } from "./attribute.ts";
 import { GroupNode } from "./group.ts";
 import type { Node, NodeChild } from "./node.ts";
 import { normalizeChildren } from "./normalize.ts";
@@ -34,19 +34,19 @@ import { normalizeChildren } from "./normalize.ts";
  *
  * @example Usage
  * ```ts
- * import { ElementNode } from "./element.ts";
+ * import { ElNode } from "./element.ts";
  * import { Attr } from "./attribute.ts";
  * import { Text } from "./text.ts";
  * import { assertEquals } from "@std/assert";
  *
- * const node = new ElementNode("div", false, [
+ * const node = new ElNode("div", false, [
  *   Attr("class", "card"),
  *   Text("Hello"),
  * ]);
  * assertEquals(node.render(), `<div class="card">Hello</div>`);
  * ```
  */
-export class ElementNode implements Node {
+export class ElNode implements Node {
   /** The tag name of the element (e.g. `div`, `img`). */
   readonly name: string;
 
@@ -57,7 +57,7 @@ export class ElementNode implements Node {
   readonly children: readonly Node[];
 
   /** The attribute children, in insertion order. */
-  private readonly attributes: readonly AttributeNode[];
+  private readonly attributes: readonly AttrNode[];
 
   /** The content children (elements, text), in insertion order. */
   private readonly content: readonly Node[];
@@ -74,14 +74,14 @@ export class ElementNode implements Node {
     this.isVoid = isVoid;
     this.children = expandGroups(normalizeChildren(children));
 
-    const attributes: AttributeNode[] = [];
+    const attributes: AttrNode[] = [];
     const content: Node[] = [];
 
     for (const child of this.children) {
       // A well-behaved node is either an attribute or content, but both
       // flags are honored to support custom node implementations.
       if (child.isAttribute()) {
-        attributes.push(child as AttributeNode);
+        attributes.push(child as AttrNode);
       }
       if (child.isElement()) {
         content.push(child);
@@ -141,7 +141,7 @@ export class ElementNode implements Node {
   }
 
   /**
-   * Returns the rendered HTML, mirroring {@linkcode ElementNode.render}.
+   * Returns the rendered HTML, mirroring {@linkcode ElNode.render}.
    *
    * @returns The rendered HTML.
    */
@@ -195,8 +195,8 @@ function expandGroups(children: readonly Node[]): Node[] {
  * @param children The children of the element.
  * @returns An element node.
  */
-export function El(name: string, ...children: NodeChild[]): ElementNode {
-  return new ElementNode(name, false, children);
+export function El(name: string, ...children: NodeChild[]): ElNode {
+  return new ElNode(name, false, children);
 }
 
 /**
@@ -220,6 +220,6 @@ export function El(name: string, ...children: NodeChild[]): ElementNode {
  * rendering.
  * @returns A void element node.
  */
-export function ElVoid(name: string, ...children: NodeChild[]): ElementNode {
-  return new ElementNode(name, true, children);
+export function ElVoid(name: string, ...children: NodeChild[]): ElNode {
+  return new ElNode(name, true, children);
 }

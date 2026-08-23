@@ -109,7 +109,7 @@ function generateElements(
 
   lines.push(
     `import { El, ElVoid } from "../element.ts";`,
-    `import type { ElementNode } from "../element.ts";`,
+    `import type { ElNode } from "../element.ts";`,
     `import type { NodeChild } from "../node.ts";`,
     ``,
   );
@@ -134,7 +134,7 @@ function generateElements(
       ]),
     );
     lines.push(
-      `export function ${func.name}(...children: NodeChild[]): ElementNode {`,
+      `export function ${func.name}(...children: NodeChild[]): ElNode {`,
       `  return ${factory}("${el.name}", ...children);`,
       `}`,
       ``,
@@ -153,7 +153,7 @@ function generateAttributes(
 
   lines.push(
     `import { Attr, AttrBool, AttrList } from "../attribute.ts";`,
-    `import type { AttributeNode } from "../attribute.ts";`,
+    `import type { AttrNode } from "../attribute.ts";`,
     `import type { AttributeValue, Node } from "../node.ts";`,
     ``,
   );
@@ -177,7 +177,7 @@ function generateAttributes(
         `export function ${func.name}(`,
         `  key: string,`,
         `  value: AttributeValue,`,
-        `): AttributeNode {`,
+        `): AttrNode {`,
         `  return Attr(\`${func.attrName}\${key}\`, value);`,
         `}`,
         ``,
@@ -219,7 +219,7 @@ function generateAttributes(
       lines.push(
         `export function ${func.name}(`,
         `  ...values: readonly AttributeValue[],`,
-        `): AttributeNode {`,
+        `): AttrNode {`,
         `  return AttrList("${attr.name}", ...values);`,
         `}`,
         ``,
@@ -236,7 +236,7 @@ function generateAttributes(
       ]),
     );
     lines.push(
-      `export function ${func.name}(value: AttributeValue): AttributeNode {`,
+      `export function ${func.name}(value: AttributeValue): AttrNode {`,
       `  return Attr("${attr.name}", value);`,
       `}`,
       ``,

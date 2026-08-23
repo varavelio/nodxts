@@ -39,10 +39,10 @@ export type { AttributeValue, Node, NodeChild } from "./node.ts";
 export { Raw, RawNode, Text, TextNode } from "./text.ts";
 
 // Attributes.
-export { Attr, AttrBool, AttributeNode, AttrList } from "./attribute.ts";
+export { Attr, AttrBool, AttrList, AttrNode } from "./attribute.ts";
 
 // Elements.
-export { El, ElementNode, ElVoid } from "./element.ts";
+export { El, ElNode, ElVoid } from "./element.ts";
 
 // Groups.
 export { Group, GroupNode } from "./group.ts";

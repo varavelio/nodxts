@@ -1,6 +1,6 @@
 import { assertEquals } from "@std/assert";
 import { Attr } from "./attribute.ts";
-import { El, ElementNode, ElVoid } from "./element.ts";
+import { El, ElNode, ElVoid } from "./element.ts";
 import { Group } from "./group.ts";
 import { Text } from "./text.ts";
 
@@ -87,7 +87,7 @@ Deno.test("El keeps attributes found inside groups", () => {
 
 Deno.test("El with an empty name renders nothing", () => {
   assertEquals(El("").render(), "");
-  assertEquals(new ElementNode("", false, [Text("x")]).render(), "");
+  assertEquals(new ElNode("", false, [Text("x")]).render(), "");
 });
 
 Deno.test("ElVoid renders a single tag", () => {

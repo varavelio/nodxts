@@ -3,7 +3,7 @@
 // Source data: https://github.com/varavelio/nodx/blob/main/data
 
 import { El, ElVoid } from "../element.ts";
-import type { ElementNode } from "../element.ts";
+import type { ElNode } from "../element.ts";
 import type { NodeChild } from "../node.ts";
 
 /**
@@ -17,7 +17,7 @@ import type { NodeChild } from "../node.ts";
  * // Renders as: <a id="1">Hello World!</a>
  * ```
  */
-export function A(...children: NodeChild[]): ElementNode {
+export function A(...children: NodeChild[]): ElNode {
   return El("a", ...children);
 }
 
@@ -32,7 +32,7 @@ export function A(...children: NodeChild[]): ElementNode {
  * // Renders as: <abbr id="1">Hello World!</abbr>
  * ```
  */
-export function AbbrEl(...children: NodeChild[]): ElementNode {
+export function AbbrEl(...children: NodeChild[]): ElNode {
   return El("abbr", ...children);
 }
 
@@ -47,7 +47,7 @@ export function AbbrEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <acronym id="1">Hello World!</acronym>
  * ```
  */
-export function Acronym(...children: NodeChild[]): ElementNode {
+export function Acronym(...children: NodeChild[]): ElNode {
   return El("acronym", ...children);
 }
 
@@ -62,7 +62,7 @@ export function Acronym(...children: NodeChild[]): ElementNode {
  * // Renders as: <address id="1">Hello World!</address>
  * ```
  */
-export function Address(...children: NodeChild[]): ElementNode {
+export function Address(...children: NodeChild[]): ElNode {
   return El("address", ...children);
 }
 
@@ -77,7 +77,7 @@ export function Address(...children: NodeChild[]): ElementNode {
  * // Renders as: <applet id="1">Hello World!</applet>
  * ```
  */
-export function Applet(...children: NodeChild[]): ElementNode {
+export function Applet(...children: NodeChild[]): ElNode {
   return El("applet", ...children);
 }
 
@@ -92,7 +92,7 @@ export function Applet(...children: NodeChild[]): ElementNode {
  * // Renders as: <area id="1">
  * ```
  */
-export function Area(...children: NodeChild[]): ElementNode {
+export function Area(...children: NodeChild[]): ElNode {
   return ElVoid("area", ...children);
 }
 
@@ -107,7 +107,7 @@ export function Area(...children: NodeChild[]): ElementNode {
  * // Renders as: <article id="1">Hello World!</article>
  * ```
  */
-export function Article(...children: NodeChild[]): ElementNode {
+export function Article(...children: NodeChild[]): ElNode {
   return El("article", ...children);
 }
 
@@ -122,7 +122,7 @@ export function Article(...children: NodeChild[]): ElementNode {
  * // Renders as: <aside id="1">Hello World!</aside>
  * ```
  */
-export function Aside(...children: NodeChild[]): ElementNode {
+export function Aside(...children: NodeChild[]): ElNode {
   return El("aside", ...children);
 }
 
@@ -137,7 +137,7 @@ export function Aside(...children: NodeChild[]): ElementNode {
  * // Renders as: <audio id="1">Hello World!</audio>
  * ```
  */
-export function Audio(...children: NodeChild[]): ElementNode {
+export function Audio(...children: NodeChild[]): ElNode {
   return El("audio", ...children);
 }
 
@@ -152,7 +152,7 @@ export function Audio(...children: NodeChild[]): ElementNode {
  * // Renders as: <b id="1">Hello World!</b>
  * ```
  */
-export function B(...children: NodeChild[]): ElementNode {
+export function B(...children: NodeChild[]): ElNode {
   return El("b", ...children);
 }
 
@@ -167,7 +167,7 @@ export function B(...children: NodeChild[]): ElementNode {
  * // Renders as: <base id="1">
  * ```
  */
-export function Base(...children: NodeChild[]): ElementNode {
+export function Base(...children: NodeChild[]): ElNode {
   return ElVoid("base", ...children);
 }
 
@@ -182,7 +182,7 @@ export function Base(...children: NodeChild[]): ElementNode {
  * // Renders as: <basefont id="1">
  * ```
  */
-export function Basefont(...children: NodeChild[]): ElementNode {
+export function Basefont(...children: NodeChild[]): ElNode {
   return ElVoid("basefont", ...children);
 }
 
@@ -197,7 +197,7 @@ export function Basefont(...children: NodeChild[]): ElementNode {
  * // Renders as: <bdi id="1">Hello World!</bdi>
  * ```
  */
-export function Bdi(...children: NodeChild[]): ElementNode {
+export function Bdi(...children: NodeChild[]): ElNode {
   return El("bdi", ...children);
 }
 
@@ -212,7 +212,7 @@ export function Bdi(...children: NodeChild[]): ElementNode {
  * // Renders as: <bdo id="1">Hello World!</bdo>
  * ```
  */
-export function Bdo(...children: NodeChild[]): ElementNode {
+export function Bdo(...children: NodeChild[]): ElNode {
   return El("bdo", ...children);
 }
 
@@ -227,7 +227,7 @@ export function Bdo(...children: NodeChild[]): ElementNode {
  * // Renders as: <bgsound id="1">
  * ```
  */
-export function Bgsound(...children: NodeChild[]): ElementNode {
+export function Bgsound(...children: NodeChild[]): ElNode {
   return ElVoid("bgsound", ...children);
 }
 
@@ -242,7 +242,7 @@ export function Bgsound(...children: NodeChild[]): ElementNode {
  * // Renders as: <big id="1">Hello World!</big>
  * ```
  */
-export function Big(...children: NodeChild[]): ElementNode {
+export function Big(...children: NodeChild[]): ElNode {
   return El("big", ...children);
 }
 
@@ -257,7 +257,7 @@ export function Big(...children: NodeChild[]): ElementNode {
  * // Renders as: <blink id="1">Hello World!</blink>
  * ```
  */
-export function Blink(...children: NodeChild[]): ElementNode {
+export function Blink(...children: NodeChild[]): ElNode {
   return El("blink", ...children);
 }
 
@@ -272,7 +272,7 @@ export function Blink(...children: NodeChild[]): ElementNode {
  * // Renders as: <blockquote id="1">Hello World!</blockquote>
  * ```
  */
-export function Blockquote(...children: NodeChild[]): ElementNode {
+export function Blockquote(...children: NodeChild[]): ElNode {
   return El("blockquote", ...children);
 }
 
@@ -287,7 +287,7 @@ export function Blockquote(...children: NodeChild[]): ElementNode {
  * // Renders as: <body id="1">Hello World!</body>
  * ```
  */
-export function Body(...children: NodeChild[]): ElementNode {
+export function Body(...children: NodeChild[]): ElNode {
   return El("body", ...children);
 }
 
@@ -302,7 +302,7 @@ export function Body(...children: NodeChild[]): ElementNode {
  * // Renders as: <br id="1">
  * ```
  */
-export function Br(...children: NodeChild[]): ElementNode {
+export function Br(...children: NodeChild[]): ElNode {
   return ElVoid("br", ...children);
 }
 
@@ -317,7 +317,7 @@ export function Br(...children: NodeChild[]): ElementNode {
  * // Renders as: <button id="1">Hello World!</button>
  * ```
  */
-export function Button(...children: NodeChild[]): ElementNode {
+export function Button(...children: NodeChild[]): ElNode {
   return El("button", ...children);
 }
 
@@ -332,7 +332,7 @@ export function Button(...children: NodeChild[]): ElementNode {
  * // Renders as: <canvas id="1">Hello World!</canvas>
  * ```
  */
-export function Canvas(...children: NodeChild[]): ElementNode {
+export function Canvas(...children: NodeChild[]): ElNode {
   return El("canvas", ...children);
 }
 
@@ -347,7 +347,7 @@ export function Canvas(...children: NodeChild[]): ElementNode {
  * // Renders as: <caption id="1">Hello World!</caption>
  * ```
  */
-export function Caption(...children: NodeChild[]): ElementNode {
+export function Caption(...children: NodeChild[]): ElNode {
   return El("caption", ...children);
 }
 
@@ -362,7 +362,7 @@ export function Caption(...children: NodeChild[]): ElementNode {
  * // Renders as: <center id="1">Hello World!</center>
  * ```
  */
-export function Center(...children: NodeChild[]): ElementNode {
+export function Center(...children: NodeChild[]): ElNode {
   return El("center", ...children);
 }
 
@@ -377,7 +377,7 @@ export function Center(...children: NodeChild[]): ElementNode {
  * // Renders as: <cite id="1">Hello World!</cite>
  * ```
  */
-export function CiteEl(...children: NodeChild[]): ElementNode {
+export function CiteEl(...children: NodeChild[]): ElNode {
   return El("cite", ...children);
 }
 
@@ -392,7 +392,7 @@ export function CiteEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <code id="1">Hello World!</code>
  * ```
  */
-export function CodeEl(...children: NodeChild[]): ElementNode {
+export function CodeEl(...children: NodeChild[]): ElNode {
   return El("code", ...children);
 }
 
@@ -407,7 +407,7 @@ export function CodeEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <col id="1">
  * ```
  */
-export function Col(...children: NodeChild[]): ElementNode {
+export function Col(...children: NodeChild[]): ElNode {
   return ElVoid("col", ...children);
 }
 
@@ -422,7 +422,7 @@ export function Col(...children: NodeChild[]): ElementNode {
  * // Renders as: <colgroup id="1">Hello World!</colgroup>
  * ```
  */
-export function Colgroup(...children: NodeChild[]): ElementNode {
+export function Colgroup(...children: NodeChild[]): ElNode {
   return El("colgroup", ...children);
 }
 
@@ -437,7 +437,7 @@ export function Colgroup(...children: NodeChild[]): ElementNode {
  * // Renders as: <command id="1">
  * ```
  */
-export function Command(...children: NodeChild[]): ElementNode {
+export function Command(...children: NodeChild[]): ElNode {
   return ElVoid("command", ...children);
 }
 
@@ -452,7 +452,7 @@ export function Command(...children: NodeChild[]): ElementNode {
  * // Renders as: <content id="1">Hello World!</content>
  * ```
  */
-export function ContentEl(...children: NodeChild[]): ElementNode {
+export function ContentEl(...children: NodeChild[]): ElNode {
   return El("content", ...children);
 }
 
@@ -467,7 +467,7 @@ export function ContentEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <data id="1">Hello World!</data>
  * ```
  */
-export function DataEl(...children: NodeChild[]): ElementNode {
+export function DataEl(...children: NodeChild[]): ElNode {
   return El("data", ...children);
 }
 
@@ -482,7 +482,7 @@ export function DataEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <datalist id="1">Hello World!</datalist>
  * ```
  */
-export function Datalist(...children: NodeChild[]): ElementNode {
+export function Datalist(...children: NodeChild[]): ElNode {
   return El("datalist", ...children);
 }
 
@@ -497,7 +497,7 @@ export function Datalist(...children: NodeChild[]): ElementNode {
  * // Renders as: <dd id="1">Hello World!</dd>
  * ```
  */
-export function Dd(...children: NodeChild[]): ElementNode {
+export function Dd(...children: NodeChild[]): ElNode {
   return El("dd", ...children);
 }
 
@@ -512,7 +512,7 @@ export function Dd(...children: NodeChild[]): ElementNode {
  * // Renders as: <del id="1">Hello World!</del>
  * ```
  */
-export function Del(...children: NodeChild[]): ElementNode {
+export function Del(...children: NodeChild[]): ElNode {
   return El("del", ...children);
 }
 
@@ -527,7 +527,7 @@ export function Del(...children: NodeChild[]): ElementNode {
  * // Renders as: <details id="1">Hello World!</details>
  * ```
  */
-export function Details(...children: NodeChild[]): ElementNode {
+export function Details(...children: NodeChild[]): ElNode {
   return El("details", ...children);
 }
 
@@ -542,7 +542,7 @@ export function Details(...children: NodeChild[]): ElementNode {
  * // Renders as: <dfn id="1">Hello World!</dfn>
  * ```
  */
-export function Dfn(...children: NodeChild[]): ElementNode {
+export function Dfn(...children: NodeChild[]): ElNode {
   return El("dfn", ...children);
 }
 
@@ -557,7 +557,7 @@ export function Dfn(...children: NodeChild[]): ElementNode {
  * // Renders as: <dialog id="1">Hello World!</dialog>
  * ```
  */
-export function Dialog(...children: NodeChild[]): ElementNode {
+export function Dialog(...children: NodeChild[]): ElNode {
   return El("dialog", ...children);
 }
 
@@ -572,7 +572,7 @@ export function Dialog(...children: NodeChild[]): ElementNode {
  * // Renders as: <dir id="1">Hello World!</dir>
  * ```
  */
-export function DirEl(...children: NodeChild[]): ElementNode {
+export function DirEl(...children: NodeChild[]): ElNode {
   return El("dir", ...children);
 }
 
@@ -587,7 +587,7 @@ export function DirEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <div id="1">Hello World!</div>
  * ```
  */
-export function Div(...children: NodeChild[]): ElementNode {
+export function Div(...children: NodeChild[]): ElNode {
   return El("div", ...children);
 }
 
@@ -602,7 +602,7 @@ export function Div(...children: NodeChild[]): ElementNode {
  * // Renders as: <dl id="1">Hello World!</dl>
  * ```
  */
-export function Dl(...children: NodeChild[]): ElementNode {
+export function Dl(...children: NodeChild[]): ElNode {
   return El("dl", ...children);
 }
 
@@ -617,7 +617,7 @@ export function Dl(...children: NodeChild[]): ElementNode {
  * // Renders as: <dt id="1">Hello World!</dt>
  * ```
  */
-export function Dt(...children: NodeChild[]): ElementNode {
+export function Dt(...children: NodeChild[]): ElNode {
   return El("dt", ...children);
 }
 
@@ -632,7 +632,7 @@ export function Dt(...children: NodeChild[]): ElementNode {
  * // Renders as: <element id="1">Hello World!</element>
  * ```
  */
-export function Element(...children: NodeChild[]): ElementNode {
+export function Element(...children: NodeChild[]): ElNode {
   return El("element", ...children);
 }
 
@@ -647,7 +647,7 @@ export function Element(...children: NodeChild[]): ElementNode {
  * // Renders as: <em id="1">Hello World!</em>
  * ```
  */
-export function Em(...children: NodeChild[]): ElementNode {
+export function Em(...children: NodeChild[]): ElNode {
   return El("em", ...children);
 }
 
@@ -662,7 +662,7 @@ export function Em(...children: NodeChild[]): ElementNode {
  * // Renders as: <embed id="1">
  * ```
  */
-export function Embed(...children: NodeChild[]): ElementNode {
+export function Embed(...children: NodeChild[]): ElNode {
   return ElVoid("embed", ...children);
 }
 
@@ -677,7 +677,7 @@ export function Embed(...children: NodeChild[]): ElementNode {
  * // Renders as: <fieldset id="1">Hello World!</fieldset>
  * ```
  */
-export function Fieldset(...children: NodeChild[]): ElementNode {
+export function Fieldset(...children: NodeChild[]): ElNode {
   return El("fieldset", ...children);
 }
 
@@ -692,7 +692,7 @@ export function Fieldset(...children: NodeChild[]): ElementNode {
  * // Renders as: <figcaption id="1">Hello World!</figcaption>
  * ```
  */
-export function Figcaption(...children: NodeChild[]): ElementNode {
+export function Figcaption(...children: NodeChild[]): ElNode {
   return El("figcaption", ...children);
 }
 
@@ -707,7 +707,7 @@ export function Figcaption(...children: NodeChild[]): ElementNode {
  * // Renders as: <figure id="1">Hello World!</figure>
  * ```
  */
-export function Figure(...children: NodeChild[]): ElementNode {
+export function Figure(...children: NodeChild[]): ElNode {
   return El("figure", ...children);
 }
 
@@ -722,7 +722,7 @@ export function Figure(...children: NodeChild[]): ElementNode {
  * // Renders as: <font id="1">Hello World!</font>
  * ```
  */
-export function Font(...children: NodeChild[]): ElementNode {
+export function Font(...children: NodeChild[]): ElNode {
   return El("font", ...children);
 }
 
@@ -737,7 +737,7 @@ export function Font(...children: NodeChild[]): ElementNode {
  * // Renders as: <footer id="1">Hello World!</footer>
  * ```
  */
-export function Footer(...children: NodeChild[]): ElementNode {
+export function Footer(...children: NodeChild[]): ElNode {
   return El("footer", ...children);
 }
 
@@ -752,7 +752,7 @@ export function Footer(...children: NodeChild[]): ElementNode {
  * // Renders as: <form id="1">Hello World!</form>
  * ```
  */
-export function FormEl(...children: NodeChild[]): ElementNode {
+export function FormEl(...children: NodeChild[]): ElNode {
   return El("form", ...children);
 }
 
@@ -767,7 +767,7 @@ export function FormEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <frame id="1">Hello World!</frame>
  * ```
  */
-export function FrameEl(...children: NodeChild[]): ElementNode {
+export function FrameEl(...children: NodeChild[]): ElNode {
   return El("frame", ...children);
 }
 
@@ -782,7 +782,7 @@ export function FrameEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <frameset id="1">Hello World!</frameset>
  * ```
  */
-export function Frameset(...children: NodeChild[]): ElementNode {
+export function Frameset(...children: NodeChild[]): ElNode {
   return El("frameset", ...children);
 }
 
@@ -797,7 +797,7 @@ export function Frameset(...children: NodeChild[]): ElementNode {
  * // Renders as: <h1 id="1">Hello World!</h1>
  * ```
  */
-export function H1(...children: NodeChild[]): ElementNode {
+export function H1(...children: NodeChild[]): ElNode {
   return El("h1", ...children);
 }
 
@@ -812,7 +812,7 @@ export function H1(...children: NodeChild[]): ElementNode {
  * // Renders as: <h2 id="1">Hello World!</h2>
  * ```
  */
-export function H2(...children: NodeChild[]): ElementNode {
+export function H2(...children: NodeChild[]): ElNode {
   return El("h2", ...children);
 }
 
@@ -827,7 +827,7 @@ export function H2(...children: NodeChild[]): ElementNode {
  * // Renders as: <h3 id="1">Hello World!</h3>
  * ```
  */
-export function H3(...children: NodeChild[]): ElementNode {
+export function H3(...children: NodeChild[]): ElNode {
   return El("h3", ...children);
 }
 
@@ -842,7 +842,7 @@ export function H3(...children: NodeChild[]): ElementNode {
  * // Renders as: <h4 id="1">Hello World!</h4>
  * ```
  */
-export function H4(...children: NodeChild[]): ElementNode {
+export function H4(...children: NodeChild[]): ElNode {
   return El("h4", ...children);
 }
 
@@ -857,7 +857,7 @@ export function H4(...children: NodeChild[]): ElementNode {
  * // Renders as: <h5 id="1">Hello World!</h5>
  * ```
  */
-export function H5(...children: NodeChild[]): ElementNode {
+export function H5(...children: NodeChild[]): ElNode {
   return El("h5", ...children);
 }
 
@@ -872,7 +872,7 @@ export function H5(...children: NodeChild[]): ElementNode {
  * // Renders as: <h6 id="1">Hello World!</h6>
  * ```
  */
-export function H6(...children: NodeChild[]): ElementNode {
+export function H6(...children: NodeChild[]): ElNode {
   return El("h6", ...children);
 }
 
@@ -887,7 +887,7 @@ export function H6(...children: NodeChild[]): ElementNode {
  * // Renders as: <head id="1">Hello World!</head>
  * ```
  */
-export function Head(...children: NodeChild[]): ElementNode {
+export function Head(...children: NodeChild[]): ElNode {
   return El("head", ...children);
 }
 
@@ -902,7 +902,7 @@ export function Head(...children: NodeChild[]): ElementNode {
  * // Renders as: <header id="1">Hello World!</header>
  * ```
  */
-export function Header(...children: NodeChild[]): ElementNode {
+export function Header(...children: NodeChild[]): ElNode {
   return El("header", ...children);
 }
 
@@ -917,7 +917,7 @@ export function Header(...children: NodeChild[]): ElementNode {
  * // Renders as: <hgroup id="1">Hello World!</hgroup>
  * ```
  */
-export function Hgroup(...children: NodeChild[]): ElementNode {
+export function Hgroup(...children: NodeChild[]): ElNode {
   return El("hgroup", ...children);
 }
 
@@ -932,7 +932,7 @@ export function Hgroup(...children: NodeChild[]): ElementNode {
  * // Renders as: <hr id="1">
  * ```
  */
-export function Hr(...children: NodeChild[]): ElementNode {
+export function Hr(...children: NodeChild[]): ElNode {
   return ElVoid("hr", ...children);
 }
 
@@ -947,7 +947,7 @@ export function Hr(...children: NodeChild[]): ElementNode {
  * // Renders as: <html id="1">Hello World!</html>
  * ```
  */
-export function Html(...children: NodeChild[]): ElementNode {
+export function Html(...children: NodeChild[]): ElNode {
   return El("html", ...children);
 }
 
@@ -962,7 +962,7 @@ export function Html(...children: NodeChild[]): ElementNode {
  * // Renders as: <i id="1">Hello World!</i>
  * ```
  */
-export function I(...children: NodeChild[]): ElementNode {
+export function I(...children: NodeChild[]): ElNode {
   return El("i", ...children);
 }
 
@@ -977,7 +977,7 @@ export function I(...children: NodeChild[]): ElementNode {
  * // Renders as: <iframe id="1">Hello World!</iframe>
  * ```
  */
-export function Iframe(...children: NodeChild[]): ElementNode {
+export function Iframe(...children: NodeChild[]): ElNode {
   return El("iframe", ...children);
 }
 
@@ -992,7 +992,7 @@ export function Iframe(...children: NodeChild[]): ElementNode {
  * // Renders as: <image id="1">
  * ```
  */
-export function Image(...children: NodeChild[]): ElementNode {
+export function Image(...children: NodeChild[]): ElNode {
   return ElVoid("image", ...children);
 }
 
@@ -1007,7 +1007,7 @@ export function Image(...children: NodeChild[]): ElementNode {
  * // Renders as: <img id="1">
  * ```
  */
-export function Img(...children: NodeChild[]): ElementNode {
+export function Img(...children: NodeChild[]): ElNode {
   return ElVoid("img", ...children);
 }
 
@@ -1022,7 +1022,7 @@ export function Img(...children: NodeChild[]): ElementNode {
  * // Renders as: <input id="1">
  * ```
  */
-export function Input(...children: NodeChild[]): ElementNode {
+export function Input(...children: NodeChild[]): ElNode {
   return ElVoid("input", ...children);
 }
 
@@ -1037,7 +1037,7 @@ export function Input(...children: NodeChild[]): ElementNode {
  * // Renders as: <ins id="1">Hello World!</ins>
  * ```
  */
-export function Ins(...children: NodeChild[]): ElementNode {
+export function Ins(...children: NodeChild[]): ElNode {
   return El("ins", ...children);
 }
 
@@ -1052,7 +1052,7 @@ export function Ins(...children: NodeChild[]): ElementNode {
  * // Renders as: <kbd id="1">Hello World!</kbd>
  * ```
  */
-export function Kbd(...children: NodeChild[]): ElementNode {
+export function Kbd(...children: NodeChild[]): ElNode {
   return El("kbd", ...children);
 }
 
@@ -1067,7 +1067,7 @@ export function Kbd(...children: NodeChild[]): ElementNode {
  * // Renders as: <keygen id="1">
  * ```
  */
-export function Keygen(...children: NodeChild[]): ElementNode {
+export function Keygen(...children: NodeChild[]): ElNode {
   return ElVoid("keygen", ...children);
 }
 
@@ -1082,7 +1082,7 @@ export function Keygen(...children: NodeChild[]): ElementNode {
  * // Renders as: <label id="1">Hello World!</label>
  * ```
  */
-export function LabelEl(...children: NodeChild[]): ElementNode {
+export function LabelEl(...children: NodeChild[]): ElNode {
   return El("label", ...children);
 }
 
@@ -1097,7 +1097,7 @@ export function LabelEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <legend id="1">Hello World!</legend>
  * ```
  */
-export function Legend(...children: NodeChild[]): ElementNode {
+export function Legend(...children: NodeChild[]): ElNode {
   return El("legend", ...children);
 }
 
@@ -1112,7 +1112,7 @@ export function Legend(...children: NodeChild[]): ElementNode {
  * // Renders as: <li id="1">Hello World!</li>
  * ```
  */
-export function Li(...children: NodeChild[]): ElementNode {
+export function Li(...children: NodeChild[]): ElNode {
   return El("li", ...children);
 }
 
@@ -1127,7 +1127,7 @@ export function Li(...children: NodeChild[]): ElementNode {
  * // Renders as: <link id="1">
  * ```
  */
-export function Link(...children: NodeChild[]): ElementNode {
+export function Link(...children: NodeChild[]): ElNode {
   return ElVoid("link", ...children);
 }
 
@@ -1142,7 +1142,7 @@ export function Link(...children: NodeChild[]): ElementNode {
  * // Renders as: <main id="1">Hello World!</main>
  * ```
  */
-export function Main(...children: NodeChild[]): ElementNode {
+export function Main(...children: NodeChild[]): ElNode {
   return El("main", ...children);
 }
 
@@ -1157,7 +1157,7 @@ export function Main(...children: NodeChild[]): ElementNode {
  * // Renders as: <map id="1">Hello World!</map>
  * ```
  */
-export function MapEl(...children: NodeChild[]): ElementNode {
+export function MapEl(...children: NodeChild[]): ElNode {
   return El("map", ...children);
 }
 
@@ -1172,7 +1172,7 @@ export function MapEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <mark id="1">Hello World!</mark>
  * ```
  */
-export function Mark(...children: NodeChild[]): ElementNode {
+export function Mark(...children: NodeChild[]): ElNode {
   return El("mark", ...children);
 }
 
@@ -1187,7 +1187,7 @@ export function Mark(...children: NodeChild[]): ElementNode {
  * // Renders as: <marquee id="1">Hello World!</marquee>
  * ```
  */
-export function Marquee(...children: NodeChild[]): ElementNode {
+export function Marquee(...children: NodeChild[]): ElNode {
   return El("marquee", ...children);
 }
 
@@ -1202,7 +1202,7 @@ export function Marquee(...children: NodeChild[]): ElementNode {
  * // Renders as: <menu id="1">Hello World!</menu>
  * ```
  */
-export function Menu(...children: NodeChild[]): ElementNode {
+export function Menu(...children: NodeChild[]): ElNode {
   return El("menu", ...children);
 }
 
@@ -1217,7 +1217,7 @@ export function Menu(...children: NodeChild[]): ElementNode {
  * // Renders as: <menuitem id="1">
  * ```
  */
-export function Menuitem(...children: NodeChild[]): ElementNode {
+export function Menuitem(...children: NodeChild[]): ElNode {
   return ElVoid("menuitem", ...children);
 }
 
@@ -1232,7 +1232,7 @@ export function Menuitem(...children: NodeChild[]): ElementNode {
  * // Renders as: <meta id="1">
  * ```
  */
-export function Meta(...children: NodeChild[]): ElementNode {
+export function Meta(...children: NodeChild[]): ElNode {
   return ElVoid("meta", ...children);
 }
 
@@ -1247,7 +1247,7 @@ export function Meta(...children: NodeChild[]): ElementNode {
  * // Renders as: <meter id="1">Hello World!</meter>
  * ```
  */
-export function Meter(...children: NodeChild[]): ElementNode {
+export function Meter(...children: NodeChild[]): ElNode {
   return El("meter", ...children);
 }
 
@@ -1262,7 +1262,7 @@ export function Meter(...children: NodeChild[]): ElementNode {
  * // Renders as: <multicol id="1">Hello World!</multicol>
  * ```
  */
-export function Multicol(...children: NodeChild[]): ElementNode {
+export function Multicol(...children: NodeChild[]): ElNode {
   return El("multicol", ...children);
 }
 
@@ -1277,7 +1277,7 @@ export function Multicol(...children: NodeChild[]): ElementNode {
  * // Renders as: <nav id="1">Hello World!</nav>
  * ```
  */
-export function Nav(...children: NodeChild[]): ElementNode {
+export function Nav(...children: NodeChild[]): ElNode {
   return El("nav", ...children);
 }
 
@@ -1292,7 +1292,7 @@ export function Nav(...children: NodeChild[]): ElementNode {
  * // Renders as: <nextid id="1">
  * ```
  */
-export function Nextid(...children: NodeChild[]): ElementNode {
+export function Nextid(...children: NodeChild[]): ElNode {
   return ElVoid("nextid", ...children);
 }
 
@@ -1307,7 +1307,7 @@ export function Nextid(...children: NodeChild[]): ElementNode {
  * // Renders as: <nobr id="1">Hello World!</nobr>
  * ```
  */
-export function Nobr(...children: NodeChild[]): ElementNode {
+export function Nobr(...children: NodeChild[]): ElNode {
   return El("nobr", ...children);
 }
 
@@ -1322,7 +1322,7 @@ export function Nobr(...children: NodeChild[]): ElementNode {
  * // Renders as: <noembed id="1">Hello World!</noembed>
  * ```
  */
-export function Noembed(...children: NodeChild[]): ElementNode {
+export function Noembed(...children: NodeChild[]): ElNode {
   return El("noembed", ...children);
 }
 
@@ -1337,7 +1337,7 @@ export function Noembed(...children: NodeChild[]): ElementNode {
  * // Renders as: <noframes id="1">Hello World!</noframes>
  * ```
  */
-export function Noframes(...children: NodeChild[]): ElementNode {
+export function Noframes(...children: NodeChild[]): ElNode {
   return El("noframes", ...children);
 }
 
@@ -1352,7 +1352,7 @@ export function Noframes(...children: NodeChild[]): ElementNode {
  * // Renders as: <noscript id="1">Hello World!</noscript>
  * ```
  */
-export function Noscript(...children: NodeChild[]): ElementNode {
+export function Noscript(...children: NodeChild[]): ElNode {
   return El("noscript", ...children);
 }
 
@@ -1367,7 +1367,7 @@ export function Noscript(...children: NodeChild[]): ElementNode {
  * // Renders as: <object id="1">Hello World!</object>
  * ```
  */
-export function ObjectEl(...children: NodeChild[]): ElementNode {
+export function ObjectEl(...children: NodeChild[]): ElNode {
   return El("object", ...children);
 }
 
@@ -1382,7 +1382,7 @@ export function ObjectEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <ol id="1">Hello World!</ol>
  * ```
  */
-export function Ol(...children: NodeChild[]): ElementNode {
+export function Ol(...children: NodeChild[]): ElNode {
   return El("ol", ...children);
 }
 
@@ -1397,7 +1397,7 @@ export function Ol(...children: NodeChild[]): ElementNode {
  * // Renders as: <optgroup id="1">Hello World!</optgroup>
  * ```
  */
-export function Optgroup(...children: NodeChild[]): ElementNode {
+export function Optgroup(...children: NodeChild[]): ElNode {
   return El("optgroup", ...children);
 }
 
@@ -1412,7 +1412,7 @@ export function Optgroup(...children: NodeChild[]): ElementNode {
  * // Renders as: <option id="1">Hello World!</option>
  * ```
  */
-export function Option(...children: NodeChild[]): ElementNode {
+export function Option(...children: NodeChild[]): ElNode {
   return El("option", ...children);
 }
 
@@ -1427,7 +1427,7 @@ export function Option(...children: NodeChild[]): ElementNode {
  * // Renders as: <output id="1">Hello World!</output>
  * ```
  */
-export function Output(...children: NodeChild[]): ElementNode {
+export function Output(...children: NodeChild[]): ElNode {
   return El("output", ...children);
 }
 
@@ -1442,7 +1442,7 @@ export function Output(...children: NodeChild[]): ElementNode {
  * // Renders as: <p id="1">Hello World!</p>
  * ```
  */
-export function P(...children: NodeChild[]): ElementNode {
+export function P(...children: NodeChild[]): ElNode {
   return El("p", ...children);
 }
 
@@ -1457,7 +1457,7 @@ export function P(...children: NodeChild[]): ElementNode {
  * // Renders as: <param id="1">
  * ```
  */
-export function Param(...children: NodeChild[]): ElementNode {
+export function Param(...children: NodeChild[]): ElNode {
   return ElVoid("param", ...children);
 }
 
@@ -1472,7 +1472,7 @@ export function Param(...children: NodeChild[]): ElementNode {
  * // Renders as: <picture id="1">Hello World!</picture>
  * ```
  */
-export function Picture(...children: NodeChild[]): ElementNode {
+export function Picture(...children: NodeChild[]): ElNode {
   return El("picture", ...children);
 }
 
@@ -1487,7 +1487,7 @@ export function Picture(...children: NodeChild[]): ElementNode {
  * // Renders as: <plaintext id="1">Hello World!</plaintext>
  * ```
  */
-export function Plaintext(...children: NodeChild[]): ElementNode {
+export function Plaintext(...children: NodeChild[]): ElNode {
   return El("plaintext", ...children);
 }
 
@@ -1502,7 +1502,7 @@ export function Plaintext(...children: NodeChild[]): ElementNode {
  * // Renders as: <portal id="1">Hello World!</portal>
  * ```
  */
-export function Portal(...children: NodeChild[]): ElementNode {
+export function Portal(...children: NodeChild[]): ElNode {
   return El("portal", ...children);
 }
 
@@ -1517,7 +1517,7 @@ export function Portal(...children: NodeChild[]): ElementNode {
  * // Renders as: <pre id="1">Hello World!</pre>
  * ```
  */
-export function Pre(...children: NodeChild[]): ElementNode {
+export function Pre(...children: NodeChild[]): ElNode {
   return El("pre", ...children);
 }
 
@@ -1532,7 +1532,7 @@ export function Pre(...children: NodeChild[]): ElementNode {
  * // Renders as: <progress id="1">Hello World!</progress>
  * ```
  */
-export function Progress(...children: NodeChild[]): ElementNode {
+export function Progress(...children: NodeChild[]): ElNode {
   return El("progress", ...children);
 }
 
@@ -1547,7 +1547,7 @@ export function Progress(...children: NodeChild[]): ElementNode {
  * // Renders as: <q id="1">Hello World!</q>
  * ```
  */
-export function Q(...children: NodeChild[]): ElementNode {
+export function Q(...children: NodeChild[]): ElNode {
   return El("q", ...children);
 }
 
@@ -1562,7 +1562,7 @@ export function Q(...children: NodeChild[]): ElementNode {
  * // Renders as: <rb id="1">Hello World!</rb>
  * ```
  */
-export function Rb(...children: NodeChild[]): ElementNode {
+export function Rb(...children: NodeChild[]): ElNode {
   return El("rb", ...children);
 }
 
@@ -1577,7 +1577,7 @@ export function Rb(...children: NodeChild[]): ElementNode {
  * // Renders as: <rp id="1">Hello World!</rp>
  * ```
  */
-export function Rp(...children: NodeChild[]): ElementNode {
+export function Rp(...children: NodeChild[]): ElNode {
   return El("rp", ...children);
 }
 
@@ -1592,7 +1592,7 @@ export function Rp(...children: NodeChild[]): ElementNode {
  * // Renders as: <rt id="1">Hello World!</rt>
  * ```
  */
-export function Rt(...children: NodeChild[]): ElementNode {
+export function Rt(...children: NodeChild[]): ElNode {
   return El("rt", ...children);
 }
 
@@ -1607,7 +1607,7 @@ export function Rt(...children: NodeChild[]): ElementNode {
  * // Renders as: <rtc id="1">Hello World!</rtc>
  * ```
  */
-export function Rtc(...children: NodeChild[]): ElementNode {
+export function Rtc(...children: NodeChild[]): ElNode {
   return El("rtc", ...children);
 }
 
@@ -1622,7 +1622,7 @@ export function Rtc(...children: NodeChild[]): ElementNode {
  * // Renders as: <ruby id="1">Hello World!</ruby>
  * ```
  */
-export function Ruby(...children: NodeChild[]): ElementNode {
+export function Ruby(...children: NodeChild[]): ElNode {
   return El("ruby", ...children);
 }
 
@@ -1637,7 +1637,7 @@ export function Ruby(...children: NodeChild[]): ElementNode {
  * // Renders as: <s id="1">Hello World!</s>
  * ```
  */
-export function S(...children: NodeChild[]): ElementNode {
+export function S(...children: NodeChild[]): ElNode {
   return El("s", ...children);
 }
 
@@ -1652,7 +1652,7 @@ export function S(...children: NodeChild[]): ElementNode {
  * // Renders as: <samp id="1">Hello World!</samp>
  * ```
  */
-export function Samp(...children: NodeChild[]): ElementNode {
+export function Samp(...children: NodeChild[]): ElNode {
   return El("samp", ...children);
 }
 
@@ -1667,7 +1667,7 @@ export function Samp(...children: NodeChild[]): ElementNode {
  * // Renders as: <script id="1">Hello World!</script>
  * ```
  */
-export function Script(...children: NodeChild[]): ElementNode {
+export function Script(...children: NodeChild[]): ElNode {
   return El("script", ...children);
 }
 
@@ -1682,7 +1682,7 @@ export function Script(...children: NodeChild[]): ElementNode {
  * // Renders as: <search id="1">Hello World!</search>
  * ```
  */
-export function Search(...children: NodeChild[]): ElementNode {
+export function Search(...children: NodeChild[]): ElNode {
   return El("search", ...children);
 }
 
@@ -1697,7 +1697,7 @@ export function Search(...children: NodeChild[]): ElementNode {
  * // Renders as: <section id="1">Hello World!</section>
  * ```
  */
-export function Section(...children: NodeChild[]): ElementNode {
+export function Section(...children: NodeChild[]): ElNode {
   return El("section", ...children);
 }
 
@@ -1712,7 +1712,7 @@ export function Section(...children: NodeChild[]): ElementNode {
  * // Renders as: <select id="1">Hello World!</select>
  * ```
  */
-export function Select(...children: NodeChild[]): ElementNode {
+export function Select(...children: NodeChild[]): ElNode {
   return El("select", ...children);
 }
 
@@ -1727,7 +1727,7 @@ export function Select(...children: NodeChild[]): ElementNode {
  * // Renders as: <shadow id="1">Hello World!</shadow>
  * ```
  */
-export function Shadow(...children: NodeChild[]): ElementNode {
+export function Shadow(...children: NodeChild[]): ElNode {
   return El("shadow", ...children);
 }
 
@@ -1742,7 +1742,7 @@ export function Shadow(...children: NodeChild[]): ElementNode {
  * // Renders as: <slot id="1">Hello World!</slot>
  * ```
  */
-export function SlotEl(...children: NodeChild[]): ElementNode {
+export function SlotEl(...children: NodeChild[]): ElNode {
   return El("slot", ...children);
 }
 
@@ -1757,7 +1757,7 @@ export function SlotEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <small id="1">Hello World!</small>
  * ```
  */
-export function Small(...children: NodeChild[]): ElementNode {
+export function Small(...children: NodeChild[]): ElNode {
   return El("small", ...children);
 }
 
@@ -1772,7 +1772,7 @@ export function Small(...children: NodeChild[]): ElementNode {
  * // Renders as: <source id="1">
  * ```
  */
-export function Source(...children: NodeChild[]): ElementNode {
+export function Source(...children: NodeChild[]): ElNode {
   return ElVoid("source", ...children);
 }
 
@@ -1787,7 +1787,7 @@ export function Source(...children: NodeChild[]): ElementNode {
  * // Renders as: <spacer id="1">Hello World!</spacer>
  * ```
  */
-export function Spacer(...children: NodeChild[]): ElementNode {
+export function Spacer(...children: NodeChild[]): ElNode {
   return El("spacer", ...children);
 }
 
@@ -1802,7 +1802,7 @@ export function Spacer(...children: NodeChild[]): ElementNode {
  * // Renders as: <span id="1">Hello World!</span>
  * ```
  */
-export function SpanEl(...children: NodeChild[]): ElementNode {
+export function SpanEl(...children: NodeChild[]): ElNode {
   return El("span", ...children);
 }
 
@@ -1817,7 +1817,7 @@ export function SpanEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <strike id="1">Hello World!</strike>
  * ```
  */
-export function Strike(...children: NodeChild[]): ElementNode {
+export function Strike(...children: NodeChild[]): ElNode {
   return El("strike", ...children);
 }
 
@@ -1832,7 +1832,7 @@ export function Strike(...children: NodeChild[]): ElementNode {
  * // Renders as: <strong id="1">Hello World!</strong>
  * ```
  */
-export function Strong(...children: NodeChild[]): ElementNode {
+export function Strong(...children: NodeChild[]): ElNode {
   return El("strong", ...children);
 }
 
@@ -1847,7 +1847,7 @@ export function Strong(...children: NodeChild[]): ElementNode {
  * // Renders as: <style id="1">Hello World!</style>
  * ```
  */
-export function StyleEl(...children: NodeChild[]): ElementNode {
+export function StyleEl(...children: NodeChild[]): ElNode {
   return El("style", ...children);
 }
 
@@ -1862,7 +1862,7 @@ export function StyleEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <sub id="1">Hello World!</sub>
  * ```
  */
-export function Sub(...children: NodeChild[]): ElementNode {
+export function Sub(...children: NodeChild[]): ElNode {
   return El("sub", ...children);
 }
 
@@ -1877,7 +1877,7 @@ export function Sub(...children: NodeChild[]): ElementNode {
  * // Renders as: <summary id="1">Hello World!</summary>
  * ```
  */
-export function SummaryEl(...children: NodeChild[]): ElementNode {
+export function SummaryEl(...children: NodeChild[]): ElNode {
   return El("summary", ...children);
 }
 
@@ -1892,7 +1892,7 @@ export function SummaryEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <sup id="1">Hello World!</sup>
  * ```
  */
-export function Sup(...children: NodeChild[]): ElementNode {
+export function Sup(...children: NodeChild[]): ElNode {
   return El("sup", ...children);
 }
 
@@ -1907,7 +1907,7 @@ export function Sup(...children: NodeChild[]): ElementNode {
  * // Renders as: <svg id="1">Hello World!</svg>
  * ```
  */
-export function Svg(...children: NodeChild[]): ElementNode {
+export function Svg(...children: NodeChild[]): ElNode {
   return El("svg", ...children);
 }
 
@@ -1922,7 +1922,7 @@ export function Svg(...children: NodeChild[]): ElementNode {
  * // Renders as: <table id="1">Hello World!</table>
  * ```
  */
-export function Table(...children: NodeChild[]): ElementNode {
+export function Table(...children: NodeChild[]): ElNode {
   return El("table", ...children);
 }
 
@@ -1937,7 +1937,7 @@ export function Table(...children: NodeChild[]): ElementNode {
  * // Renders as: <tbody id="1">Hello World!</tbody>
  * ```
  */
-export function Tbody(...children: NodeChild[]): ElementNode {
+export function Tbody(...children: NodeChild[]): ElNode {
   return El("tbody", ...children);
 }
 
@@ -1952,7 +1952,7 @@ export function Tbody(...children: NodeChild[]): ElementNode {
  * // Renders as: <td id="1">Hello World!</td>
  * ```
  */
-export function Td(...children: NodeChild[]): ElementNode {
+export function Td(...children: NodeChild[]): ElNode {
   return El("td", ...children);
 }
 
@@ -1967,7 +1967,7 @@ export function Td(...children: NodeChild[]): ElementNode {
  * // Renders as: <template id="1">Hello World!</template>
  * ```
  */
-export function Template(...children: NodeChild[]): ElementNode {
+export function Template(...children: NodeChild[]): ElNode {
   return El("template", ...children);
 }
 
@@ -1982,7 +1982,7 @@ export function Template(...children: NodeChild[]): ElementNode {
  * // Renders as: <textarea id="1">Hello World!</textarea>
  * ```
  */
-export function Textarea(...children: NodeChild[]): ElementNode {
+export function Textarea(...children: NodeChild[]): ElNode {
   return El("textarea", ...children);
 }
 
@@ -1997,7 +1997,7 @@ export function Textarea(...children: NodeChild[]): ElementNode {
  * // Renders as: <tfoot id="1">Hello World!</tfoot>
  * ```
  */
-export function Tfoot(...children: NodeChild[]): ElementNode {
+export function Tfoot(...children: NodeChild[]): ElNode {
   return El("tfoot", ...children);
 }
 
@@ -2012,7 +2012,7 @@ export function Tfoot(...children: NodeChild[]): ElementNode {
  * // Renders as: <th id="1">Hello World!</th>
  * ```
  */
-export function Th(...children: NodeChild[]): ElementNode {
+export function Th(...children: NodeChild[]): ElNode {
   return El("th", ...children);
 }
 
@@ -2027,7 +2027,7 @@ export function Th(...children: NodeChild[]): ElementNode {
  * // Renders as: <thead id="1">Hello World!</thead>
  * ```
  */
-export function Thead(...children: NodeChild[]): ElementNode {
+export function Thead(...children: NodeChild[]): ElNode {
   return El("thead", ...children);
 }
 
@@ -2042,7 +2042,7 @@ export function Thead(...children: NodeChild[]): ElementNode {
  * // Renders as: <time id="1">Hello World!</time>
  * ```
  */
-export function Time(...children: NodeChild[]): ElementNode {
+export function Time(...children: NodeChild[]): ElNode {
   return El("time", ...children);
 }
 
@@ -2057,7 +2057,7 @@ export function Time(...children: NodeChild[]): ElementNode {
  * // Renders as: <title id="1">Hello World!</title>
  * ```
  */
-export function TitleEl(...children: NodeChild[]): ElementNode {
+export function TitleEl(...children: NodeChild[]): ElNode {
   return El("title", ...children);
 }
 
@@ -2072,7 +2072,7 @@ export function TitleEl(...children: NodeChild[]): ElementNode {
  * // Renders as: <tr id="1">Hello World!</tr>
  * ```
  */
-export function Tr(...children: NodeChild[]): ElementNode {
+export function Tr(...children: NodeChild[]): ElNode {
   return El("tr", ...children);
 }
 
@@ -2087,7 +2087,7 @@ export function Tr(...children: NodeChild[]): ElementNode {
  * // Renders as: <track id="1">
  * ```
  */
-export function Track(...children: NodeChild[]): ElementNode {
+export function Track(...children: NodeChild[]): ElNode {
   return ElVoid("track", ...children);
 }
 
@@ -2102,7 +2102,7 @@ export function Track(...children: NodeChild[]): ElementNode {
  * // Renders as: <tt id="1">Hello World!</tt>
  * ```
  */
-export function Tt(...children: NodeChild[]): ElementNode {
+export function Tt(...children: NodeChild[]): ElNode {
   return El("tt", ...children);
 }
 
@@ -2117,7 +2117,7 @@ export function Tt(...children: NodeChild[]): ElementNode {
  * // Renders as: <u id="1">Hello World!</u>
  * ```
  */
-export function U(...children: NodeChild[]): ElementNode {
+export function U(...children: NodeChild[]): ElNode {
   return El("u", ...children);
 }
 
@@ -2132,7 +2132,7 @@ export function U(...children: NodeChild[]): ElementNode {
  * // Renders as: <ul id="1">Hello World!</ul>
  * ```
  */
-export function Ul(...children: NodeChild[]): ElementNode {
+export function Ul(...children: NodeChild[]): ElNode {
   return El("ul", ...children);
 }
 
@@ -2147,7 +2147,7 @@ export function Ul(...children: NodeChild[]): ElementNode {
  * // Renders as: <var id="1">Hello World!</var>
  * ```
  */
-export function Var(...children: NodeChild[]): ElementNode {
+export function Var(...children: NodeChild[]): ElNode {
   return El("var", ...children);
 }
 
@@ -2162,7 +2162,7 @@ export function Var(...children: NodeChild[]): ElementNode {
  * // Renders as: <video id="1">Hello World!</video>
  * ```
  */
-export function Video(...children: NodeChild[]): ElementNode {
+export function Video(...children: NodeChild[]): ElNode {
   return El("video", ...children);
 }
 
@@ -2177,7 +2177,7 @@ export function Video(...children: NodeChild[]): ElementNode {
  * // Renders as: <wbr id="1">
  * ```
  */
-export function Wbr(...children: NodeChild[]): ElementNode {
+export function Wbr(...children: NodeChild[]): ElNode {
   return ElVoid("wbr", ...children);
 }
 
@@ -2192,6 +2192,6 @@ export function Wbr(...children: NodeChild[]): ElementNode {
  * // Renders as: <xmp id="1">Hello World!</xmp>
  * ```
  */
-export function Xmp(...children: NodeChild[]): ElementNode {
+export function Xmp(...children: NodeChild[]): ElNode {
   return El("xmp", ...children);
 }

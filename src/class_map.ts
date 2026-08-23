@@ -4,7 +4,7 @@
  * @module
  */
 
-import { AttributeNode } from "./attribute.ts";
+import { AttrNode } from "./attribute.ts";
 
 /**
  * A record of class names with conditional rendering.
@@ -35,7 +35,7 @@ export type ClassMapInput = Record<string, boolean>;
  * @param classes The conditional class names.
  * @returns The `class` attribute node.
  */
-export function ClassMap(classes: ClassMapInput): AttributeNode {
+export function ClassMap(classes: ClassMapInput): AttrNode {
   const tokens: string[] = [];
 
   for (const className of Object.keys(classes)) {
@@ -44,5 +44,5 @@ export function ClassMap(classes: ClassMapInput): AttributeNode {
     }
   }
 
-  return new AttributeNode("class", tokens.sort().join(" "));
+  return new AttrNode("class", tokens.sort().join(" "));
 }

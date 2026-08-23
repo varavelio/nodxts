@@ -3,7 +3,7 @@
 // Source data: https://github.com/varavelio/nodx/blob/main/data
 
 import { Attr, AttrBool, AttrList } from "../attribute.ts";
-import type { AttributeNode } from "../attribute.ts";
+import type { AttrNode } from "../attribute.ts";
 import type { AttributeValue, Node } from "../node.ts";
 
 /**
@@ -17,7 +17,7 @@ import type { AttributeValue, Node } from "../node.ts";
  * // Renders as: abbr="value"
  * ```
  */
-export function AbbrAttr(value: AttributeValue): AttributeNode {
+export function AbbrAttr(value: AttributeValue): AttrNode {
   return Attr("abbr", value);
 }
 
@@ -32,7 +32,7 @@ export function AbbrAttr(value: AttributeValue): AttributeNode {
  * // Renders as: accept="value"
  * ```
  */
-export function Accept(value: AttributeValue): AttributeNode {
+export function Accept(value: AttributeValue): AttrNode {
   return Attr("accept", value);
 }
 
@@ -47,7 +47,7 @@ export function Accept(value: AttributeValue): AttributeNode {
  * // Renders as: accept-charset="value"
  * ```
  */
-export function AcceptCharset(value: AttributeValue): AttributeNode {
+export function AcceptCharset(value: AttributeValue): AttrNode {
   return Attr("accept-charset", value);
 }
 
@@ -64,7 +64,7 @@ export function AcceptCharset(value: AttributeValue): AttributeNode {
  */
 export function Accesskey(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("accesskey", ...values);
 }
 
@@ -79,7 +79,7 @@ export function Accesskey(
  * // Renders as: action="value"
  * ```
  */
-export function Action(value: AttributeValue): AttributeNode {
+export function Action(value: AttributeValue): AttrNode {
   return Attr("action", value);
 }
 
@@ -94,7 +94,7 @@ export function Action(value: AttributeValue): AttributeNode {
  * // Renders as: align="value"
  * ```
  */
-export function Align(value: AttributeValue): AttributeNode {
+export function Align(value: AttributeValue): AttrNode {
   return Attr("align", value);
 }
 
@@ -109,7 +109,7 @@ export function Align(value: AttributeValue): AttributeNode {
  * // Renders as: allow="value"
  * ```
  */
-export function Allow(value: AttributeValue): AttributeNode {
+export function Allow(value: AttributeValue): AttrNode {
   return Attr("allow", value);
 }
 
@@ -143,7 +143,7 @@ export function Allowfullscreen(value: boolean): Node {
  * // Renders as: alt="value"
  * ```
  */
-export function Alt(value: AttributeValue): AttributeNode {
+export function Alt(value: AttributeValue): AttrNode {
   return Attr("alt", value);
 }
 
@@ -158,7 +158,7 @@ export function Alt(value: AttributeValue): AttributeNode {
  * // Renders as: archive="value"
  * ```
  */
-export function Archive(value: AttributeValue): AttributeNode {
+export function Archive(value: AttributeValue): AttrNode {
   return Attr("archive", value);
 }
 
@@ -176,7 +176,7 @@ export function Archive(value: AttributeValue): AttributeNode {
 export function Aria(
   key: string,
   value: AttributeValue,
-): AttributeNode {
+): AttrNode {
   return Attr(`aria-${key}`, value);
 }
 
@@ -191,7 +191,7 @@ export function Aria(
  * // Renders as: as="value"
  * ```
  */
-export function As(value: AttributeValue): AttributeNode {
+export function As(value: AttributeValue): AttrNode {
   return Attr("as", value);
 }
 
@@ -225,7 +225,7 @@ export function Async(value: boolean): Node {
  * // Renders as: autocapitalize="value"
  * ```
  */
-export function Autocapitalize(value: AttributeValue): AttributeNode {
+export function Autocapitalize(value: AttributeValue): AttrNode {
   return Attr("autocapitalize", value);
 }
 
@@ -242,7 +242,7 @@ export function Autocapitalize(value: AttributeValue): AttributeNode {
  */
 export function Autocomplete(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("autocomplete", ...values);
 }
 
@@ -257,7 +257,7 @@ export function Autocomplete(
  * // Renders as: autocorrect="value"
  * ```
  */
-export function Autocorrect(value: AttributeValue): AttributeNode {
+export function Autocorrect(value: AttributeValue): AttrNode {
   return Attr("autocorrect", value);
 }
 
@@ -310,7 +310,7 @@ export function Autoplay(value: boolean): Node {
  * // Renders as: autosave="value"
  * ```
  */
-export function Autosave(value: AttributeValue): AttributeNode {
+export function Autosave(value: AttributeValue): AttrNode {
   return Attr("autosave", value);
 }
 
@@ -325,7 +325,7 @@ export function Autosave(value: AttributeValue): AttributeNode {
  * // Renders as: axis="value"
  * ```
  */
-export function Axis(value: AttributeValue): AttributeNode {
+export function Axis(value: AttributeValue): AttrNode {
   return Attr("axis", value);
 }
 
@@ -340,7 +340,7 @@ export function Axis(value: AttributeValue): AttributeNode {
  * // Renders as: background="value"
  * ```
  */
-export function Background(value: AttributeValue): AttributeNode {
+export function Background(value: AttributeValue): AttrNode {
   return Attr("background", value);
 }
 
@@ -355,7 +355,7 @@ export function Background(value: AttributeValue): AttributeNode {
  * // Renders as: bgcolor="value"
  * ```
  */
-export function Bgcolor(value: AttributeValue): AttributeNode {
+export function Bgcolor(value: AttributeValue): AttrNode {
   return Attr("bgcolor", value);
 }
 
@@ -370,7 +370,7 @@ export function Bgcolor(value: AttributeValue): AttributeNode {
  * // Renders as: blocking="value"
  * ```
  */
-export function Blocking(value: AttributeValue): AttributeNode {
+export function Blocking(value: AttributeValue): AttrNode {
   return Attr("blocking", value);
 }
 
@@ -385,7 +385,7 @@ export function Blocking(value: AttributeValue): AttributeNode {
  * // Renders as: border="value"
  * ```
  */
-export function Border(value: AttributeValue): AttributeNode {
+export function Border(value: AttributeValue): AttrNode {
   return Attr("border", value);
 }
 
@@ -400,7 +400,7 @@ export function Border(value: AttributeValue): AttributeNode {
  * // Renders as: buffered="value"
  * ```
  */
-export function Buffered(value: AttributeValue): AttributeNode {
+export function Buffered(value: AttributeValue): AttrNode {
   return Attr("buffered", value);
 }
 
@@ -415,7 +415,7 @@ export function Buffered(value: AttributeValue): AttributeNode {
  * // Renders as: capture="value"
  * ```
  */
-export function Capture(value: AttributeValue): AttributeNode {
+export function Capture(value: AttributeValue): AttrNode {
   return Attr("capture", value);
 }
 
@@ -430,7 +430,7 @@ export function Capture(value: AttributeValue): AttributeNode {
  * // Renders as: cellpadding="value"
  * ```
  */
-export function Cellpadding(value: AttributeValue): AttributeNode {
+export function Cellpadding(value: AttributeValue): AttrNode {
   return Attr("cellpadding", value);
 }
 
@@ -445,7 +445,7 @@ export function Cellpadding(value: AttributeValue): AttributeNode {
  * // Renders as: cellspacing="value"
  * ```
  */
-export function Cellspacing(value: AttributeValue): AttributeNode {
+export function Cellspacing(value: AttributeValue): AttrNode {
   return Attr("cellspacing", value);
 }
 
@@ -460,7 +460,7 @@ export function Cellspacing(value: AttributeValue): AttributeNode {
  * // Renders as: challenge="value"
  * ```
  */
-export function Challenge(value: AttributeValue): AttributeNode {
+export function Challenge(value: AttributeValue): AttrNode {
   return Attr("challenge", value);
 }
 
@@ -475,7 +475,7 @@ export function Challenge(value: AttributeValue): AttributeNode {
  * // Renders as: char="value"
  * ```
  */
-export function Char(value: AttributeValue): AttributeNode {
+export function Char(value: AttributeValue): AttrNode {
   return Attr("char", value);
 }
 
@@ -490,7 +490,7 @@ export function Char(value: AttributeValue): AttributeNode {
  * // Renders as: charoff="value"
  * ```
  */
-export function Charoff(value: AttributeValue): AttributeNode {
+export function Charoff(value: AttributeValue): AttrNode {
   return Attr("charoff", value);
 }
 
@@ -505,7 +505,7 @@ export function Charoff(value: AttributeValue): AttributeNode {
  * // Renders as: charset="value"
  * ```
  */
-export function Charset(value: AttributeValue): AttributeNode {
+export function Charset(value: AttributeValue): AttrNode {
   return Attr("charset", value);
 }
 
@@ -539,7 +539,7 @@ export function Checked(value: boolean): Node {
  * // Renders as: cite="value"
  * ```
  */
-export function CiteAttr(value: AttributeValue): AttributeNode {
+export function CiteAttr(value: AttributeValue): AttrNode {
   return Attr("cite", value);
 }
 
@@ -556,7 +556,7 @@ export function CiteAttr(value: AttributeValue): AttributeNode {
  */
 export function Class(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("class", ...values);
 }
 
@@ -571,7 +571,7 @@ export function Class(
  * // Renders as: classid="value"
  * ```
  */
-export function Classid(value: AttributeValue): AttributeNode {
+export function Classid(value: AttributeValue): AttrNode {
   return Attr("classid", value);
 }
 
@@ -586,7 +586,7 @@ export function Classid(value: AttributeValue): AttributeNode {
  * // Renders as: clear="value"
  * ```
  */
-export function Clear(value: AttributeValue): AttributeNode {
+export function Clear(value: AttributeValue): AttrNode {
   return Attr("clear", value);
 }
 
@@ -601,7 +601,7 @@ export function Clear(value: AttributeValue): AttributeNode {
  * // Renders as: code="value"
  * ```
  */
-export function CodeAttr(value: AttributeValue): AttributeNode {
+export function CodeAttr(value: AttributeValue): AttrNode {
   return Attr("code", value);
 }
 
@@ -616,7 +616,7 @@ export function CodeAttr(value: AttributeValue): AttributeNode {
  * // Renders as: codebase="value"
  * ```
  */
-export function Codebase(value: AttributeValue): AttributeNode {
+export function Codebase(value: AttributeValue): AttrNode {
   return Attr("codebase", value);
 }
 
@@ -631,7 +631,7 @@ export function Codebase(value: AttributeValue): AttributeNode {
  * // Renders as: codetype="value"
  * ```
  */
-export function Codetype(value: AttributeValue): AttributeNode {
+export function Codetype(value: AttributeValue): AttrNode {
   return Attr("codetype", value);
 }
 
@@ -646,7 +646,7 @@ export function Codetype(value: AttributeValue): AttributeNode {
  * // Renders as: color="value"
  * ```
  */
-export function Color(value: AttributeValue): AttributeNode {
+export function Color(value: AttributeValue): AttrNode {
   return Attr("color", value);
 }
 
@@ -661,7 +661,7 @@ export function Color(value: AttributeValue): AttributeNode {
  * // Renders as: cols="value"
  * ```
  */
-export function Cols(value: AttributeValue): AttributeNode {
+export function Cols(value: AttributeValue): AttrNode {
   return Attr("cols", value);
 }
 
@@ -676,7 +676,7 @@ export function Cols(value: AttributeValue): AttributeNode {
  * // Renders as: colspan="value"
  * ```
  */
-export function Colspan(value: AttributeValue): AttributeNode {
+export function Colspan(value: AttributeValue): AttrNode {
   return Attr("colspan", value);
 }
 
@@ -691,7 +691,7 @@ export function Colspan(value: AttributeValue): AttributeNode {
  * // Renders as: compact="value"
  * ```
  */
-export function Compact(value: AttributeValue): AttributeNode {
+export function Compact(value: AttributeValue): AttrNode {
   return Attr("compact", value);
 }
 
@@ -706,7 +706,7 @@ export function Compact(value: AttributeValue): AttributeNode {
  * // Renders as: content="value"
  * ```
  */
-export function ContentAttr(value: AttributeValue): AttributeNode {
+export function ContentAttr(value: AttributeValue): AttrNode {
   return Attr("content", value);
 }
 
@@ -721,7 +721,7 @@ export function ContentAttr(value: AttributeValue): AttributeNode {
  * // Renders as: contenteditable="value"
  * ```
  */
-export function Contenteditable(value: AttributeValue): AttributeNode {
+export function Contenteditable(value: AttributeValue): AttrNode {
   return Attr("contenteditable", value);
 }
 
@@ -736,7 +736,7 @@ export function Contenteditable(value: AttributeValue): AttributeNode {
  * // Renders as: contextmenu="value"
  * ```
  */
-export function Contextmenu(value: AttributeValue): AttributeNode {
+export function Contextmenu(value: AttributeValue): AttrNode {
   return Attr("contextmenu", value);
 }
 
@@ -770,7 +770,7 @@ export function Controls(value: boolean): Node {
  * // Renders as: coords="value"
  * ```
  */
-export function Coords(value: AttributeValue): AttributeNode {
+export function Coords(value: AttributeValue): AttrNode {
   return Attr("coords", value);
 }
 
@@ -785,7 +785,7 @@ export function Coords(value: AttributeValue): AttributeNode {
  * // Renders as: crossorigin="value"
  * ```
  */
-export function Crossorigin(value: AttributeValue): AttributeNode {
+export function Crossorigin(value: AttributeValue): AttrNode {
   return Attr("crossorigin", value);
 }
 
@@ -800,7 +800,7 @@ export function Crossorigin(value: AttributeValue): AttributeNode {
  * // Renders as: csp="value"
  * ```
  */
-export function Csp(value: AttributeValue): AttributeNode {
+export function Csp(value: AttributeValue): AttrNode {
   return Attr("csp", value);
 }
 
@@ -815,7 +815,7 @@ export function Csp(value: AttributeValue): AttributeNode {
  * // Renders as: data="value"
  * ```
  */
-export function DataAttr(value: AttributeValue): AttributeNode {
+export function DataAttr(value: AttributeValue): AttrNode {
   return Attr("data", value);
 }
 
@@ -833,7 +833,7 @@ export function DataAttr(value: AttributeValue): AttributeNode {
 export function Data(
   key: string,
   value: AttributeValue,
-): AttributeNode {
+): AttrNode {
   return Attr(`data-${key}`, value);
 }
 
@@ -848,7 +848,7 @@ export function Data(
  * // Renders as: datetime="value"
  * ```
  */
-export function Datetime(value: AttributeValue): AttributeNode {
+export function Datetime(value: AttributeValue): AttrNode {
   return Attr("datetime", value);
 }
 
@@ -863,7 +863,7 @@ export function Datetime(value: AttributeValue): AttributeNode {
  * // Renders as: declare="value"
  * ```
  */
-export function Declare(value: AttributeValue): AttributeNode {
+export function Declare(value: AttributeValue): AttrNode {
   return Attr("declare", value);
 }
 
@@ -878,7 +878,7 @@ export function Declare(value: AttributeValue): AttributeNode {
  * // Renders as: decoding="value"
  * ```
  */
-export function Decoding(value: AttributeValue): AttributeNode {
+export function Decoding(value: AttributeValue): AttrNode {
   return Attr("decoding", value);
 }
 
@@ -931,7 +931,7 @@ export function Defer(value: boolean): Node {
  * // Renders as: dir="value"
  * ```
  */
-export function DirAttr(value: AttributeValue): AttributeNode {
+export function DirAttr(value: AttributeValue): AttrNode {
   return Attr("dir", value);
 }
 
@@ -946,7 +946,7 @@ export function DirAttr(value: AttributeValue): AttributeNode {
  * // Renders as: dirname="value"
  * ```
  */
-export function Dirname(value: AttributeValue): AttributeNode {
+export function Dirname(value: AttributeValue): AttrNode {
   return Attr("dirname", value);
 }
 
@@ -980,7 +980,7 @@ export function Disabled(value: boolean): Node {
  * // Renders as: download="value"
  * ```
  */
-export function Download(value: AttributeValue): AttributeNode {
+export function Download(value: AttributeValue): AttrNode {
   return Attr("download", value);
 }
 
@@ -995,7 +995,7 @@ export function Download(value: AttributeValue): AttributeNode {
  * // Renders as: draggable="value"
  * ```
  */
-export function Draggable(value: AttributeValue): AttributeNode {
+export function Draggable(value: AttributeValue): AttrNode {
   return Attr("draggable", value);
 }
 
@@ -1010,7 +1010,7 @@ export function Draggable(value: AttributeValue): AttributeNode {
  * // Renders as: enctype="value"
  * ```
  */
-export function Enctype(value: AttributeValue): AttributeNode {
+export function Enctype(value: AttributeValue): AttrNode {
   return Attr("enctype", value);
 }
 
@@ -1025,7 +1025,7 @@ export function Enctype(value: AttributeValue): AttributeNode {
  * // Renders as: enterkeyhint="value"
  * ```
  */
-export function Enterkeyhint(value: AttributeValue): AttributeNode {
+export function Enterkeyhint(value: AttributeValue): AttrNode {
   return Attr("enterkeyhint", value);
 }
 
@@ -1040,7 +1040,7 @@ export function Enterkeyhint(value: AttributeValue): AttributeNode {
  * // Renders as: event="value"
  * ```
  */
-export function Event(value: AttributeValue): AttributeNode {
+export function Event(value: AttributeValue): AttrNode {
   return Attr("event", value);
 }
 
@@ -1055,7 +1055,7 @@ export function Event(value: AttributeValue): AttributeNode {
  * // Renders as: exportparts="value"
  * ```
  */
-export function Exportparts(value: AttributeValue): AttributeNode {
+export function Exportparts(value: AttributeValue): AttrNode {
   return Attr("exportparts", value);
 }
 
@@ -1070,7 +1070,7 @@ export function Exportparts(value: AttributeValue): AttributeNode {
  * // Renders as: face="value"
  * ```
  */
-export function Face(value: AttributeValue): AttributeNode {
+export function Face(value: AttributeValue): AttrNode {
   return Attr("face", value);
 }
 
@@ -1085,7 +1085,7 @@ export function Face(value: AttributeValue): AttributeNode {
  * // Renders as: fetchpriority="value"
  * ```
  */
-export function Fetchpriority(value: AttributeValue): AttributeNode {
+export function Fetchpriority(value: AttributeValue): AttrNode {
   return Attr("fetchpriority", value);
 }
 
@@ -1100,7 +1100,7 @@ export function Fetchpriority(value: AttributeValue): AttributeNode {
  * // Renders as: for="value"
  * ```
  */
-export function For(value: AttributeValue): AttributeNode {
+export function For(value: AttributeValue): AttrNode {
   return Attr("for", value);
 }
 
@@ -1115,7 +1115,7 @@ export function For(value: AttributeValue): AttributeNode {
  * // Renders as: form="value"
  * ```
  */
-export function FormAttr(value: AttributeValue): AttributeNode {
+export function FormAttr(value: AttributeValue): AttrNode {
   return Attr("form", value);
 }
 
@@ -1130,7 +1130,7 @@ export function FormAttr(value: AttributeValue): AttributeNode {
  * // Renders as: formaction="value"
  * ```
  */
-export function Formaction(value: AttributeValue): AttributeNode {
+export function Formaction(value: AttributeValue): AttrNode {
   return Attr("formaction", value);
 }
 
@@ -1145,7 +1145,7 @@ export function Formaction(value: AttributeValue): AttributeNode {
  * // Renders as: formenctype="value"
  * ```
  */
-export function Formenctype(value: AttributeValue): AttributeNode {
+export function Formenctype(value: AttributeValue): AttrNode {
   return Attr("formenctype", value);
 }
 
@@ -1160,7 +1160,7 @@ export function Formenctype(value: AttributeValue): AttributeNode {
  * // Renders as: formmethod="value"
  * ```
  */
-export function Formmethod(value: AttributeValue): AttributeNode {
+export function Formmethod(value: AttributeValue): AttrNode {
   return Attr("formmethod", value);
 }
 
@@ -1194,7 +1194,7 @@ export function Formnovalidate(value: boolean): Node {
  * // Renders as: formtarget="value"
  * ```
  */
-export function Formtarget(value: AttributeValue): AttributeNode {
+export function Formtarget(value: AttributeValue): AttrNode {
   return Attr("formtarget", value);
 }
 
@@ -1209,7 +1209,7 @@ export function Formtarget(value: AttributeValue): AttributeNode {
  * // Renders as: frame="value"
  * ```
  */
-export function FrameAttr(value: AttributeValue): AttributeNode {
+export function FrameAttr(value: AttributeValue): AttrNode {
   return Attr("frame", value);
 }
 
@@ -1224,7 +1224,7 @@ export function FrameAttr(value: AttributeValue): AttributeNode {
  * // Renders as: frameborder="value"
  * ```
  */
-export function Frameborder(value: AttributeValue): AttributeNode {
+export function Frameborder(value: AttributeValue): AttrNode {
   return Attr("frameborder", value);
 }
 
@@ -1241,7 +1241,7 @@ export function Frameborder(value: AttributeValue): AttributeNode {
  */
 export function Headers(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("headers", ...values);
 }
 
@@ -1256,7 +1256,7 @@ export function Headers(
  * // Renders as: height="value"
  * ```
  */
-export function Height(value: AttributeValue): AttributeNode {
+export function Height(value: AttributeValue): AttrNode {
   return Attr("height", value);
 }
 
@@ -1271,7 +1271,7 @@ export function Height(value: AttributeValue): AttributeNode {
  * // Renders as: hidden="value"
  * ```
  */
-export function Hidden(value: AttributeValue): AttributeNode {
+export function Hidden(value: AttributeValue): AttrNode {
   return Attr("hidden", value);
 }
 
@@ -1286,7 +1286,7 @@ export function Hidden(value: AttributeValue): AttributeNode {
  * // Renders as: high="value"
  * ```
  */
-export function High(value: AttributeValue): AttributeNode {
+export function High(value: AttributeValue): AttrNode {
   return Attr("high", value);
 }
 
@@ -1301,7 +1301,7 @@ export function High(value: AttributeValue): AttributeNode {
  * // Renders as: href="value"
  * ```
  */
-export function Href(value: AttributeValue): AttributeNode {
+export function Href(value: AttributeValue): AttrNode {
   return Attr("href", value);
 }
 
@@ -1316,7 +1316,7 @@ export function Href(value: AttributeValue): AttributeNode {
  * // Renders as: hreflang="value"
  * ```
  */
-export function Hreflang(value: AttributeValue): AttributeNode {
+export function Hreflang(value: AttributeValue): AttrNode {
   return Attr("hreflang", value);
 }
 
@@ -1331,7 +1331,7 @@ export function Hreflang(value: AttributeValue): AttributeNode {
  * // Renders as: hspace="value"
  * ```
  */
-export function Hspace(value: AttributeValue): AttributeNode {
+export function Hspace(value: AttributeValue): AttrNode {
   return Attr("hspace", value);
 }
 
@@ -1346,7 +1346,7 @@ export function Hspace(value: AttributeValue): AttributeNode {
  * // Renders as: http-equiv="value"
  * ```
  */
-export function HttpEquiv(value: AttributeValue): AttributeNode {
+export function HttpEquiv(value: AttributeValue): AttrNode {
   return Attr("http-equiv", value);
 }
 
@@ -1361,7 +1361,7 @@ export function HttpEquiv(value: AttributeValue): AttributeNode {
  * // Renders as: icon="value"
  * ```
  */
-export function Icon(value: AttributeValue): AttributeNode {
+export function Icon(value: AttributeValue): AttrNode {
   return Attr("icon", value);
 }
 
@@ -1376,7 +1376,7 @@ export function Icon(value: AttributeValue): AttributeNode {
  * // Renders as: id="value"
  * ```
  */
-export function Id(value: AttributeValue): AttributeNode {
+export function Id(value: AttributeValue): AttrNode {
   return Attr("id", value);
 }
 
@@ -1391,7 +1391,7 @@ export function Id(value: AttributeValue): AttributeNode {
  * // Renders as: imagesizes="value"
  * ```
  */
-export function Imagesizes(value: AttributeValue): AttributeNode {
+export function Imagesizes(value: AttributeValue): AttrNode {
   return Attr("imagesizes", value);
 }
 
@@ -1406,7 +1406,7 @@ export function Imagesizes(value: AttributeValue): AttributeNode {
  * // Renders as: imagesrcset="value"
  * ```
  */
-export function Imagesrcset(value: AttributeValue): AttributeNode {
+export function Imagesrcset(value: AttributeValue): AttrNode {
   return Attr("imagesrcset", value);
 }
 
@@ -1421,7 +1421,7 @@ export function Imagesrcset(value: AttributeValue): AttributeNode {
  * // Renders as: importance="value"
  * ```
  */
-export function Importance(value: AttributeValue): AttributeNode {
+export function Importance(value: AttributeValue): AttrNode {
   return Attr("importance", value);
 }
 
@@ -1455,7 +1455,7 @@ export function Inert(value: boolean): Node {
  * // Renders as: inputmode="value"
  * ```
  */
-export function Inputmode(value: AttributeValue): AttributeNode {
+export function Inputmode(value: AttributeValue): AttrNode {
   return Attr("inputmode", value);
 }
 
@@ -1470,7 +1470,7 @@ export function Inputmode(value: AttributeValue): AttributeNode {
  * // Renders as: integrity="value"
  * ```
  */
-export function Integrity(value: AttributeValue): AttributeNode {
+export function Integrity(value: AttributeValue): AttrNode {
   return Attr("integrity", value);
 }
 
@@ -1504,7 +1504,7 @@ export function Ismap(value: boolean): Node {
  * // Renders as: itemid="value"
  * ```
  */
-export function Itemid(value: AttributeValue): AttributeNode {
+export function Itemid(value: AttributeValue): AttrNode {
   return Attr("itemid", value);
 }
 
@@ -1521,7 +1521,7 @@ export function Itemid(value: AttributeValue): AttributeNode {
  */
 export function Itemprop(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("itemprop", ...values);
 }
 
@@ -1536,7 +1536,7 @@ export function Itemprop(
  * // Renders as: itemref="value"
  * ```
  */
-export function Itemref(value: AttributeValue): AttributeNode {
+export function Itemref(value: AttributeValue): AttrNode {
   return Attr("itemref", value);
 }
 
@@ -1572,7 +1572,7 @@ export function Itemscope(value: boolean): Node {
  */
 export function Itemtype(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("itemtype", ...values);
 }
 
@@ -1587,7 +1587,7 @@ export function Itemtype(
  * // Renders as: keytype="value"
  * ```
  */
-export function Keytype(value: AttributeValue): AttributeNode {
+export function Keytype(value: AttributeValue): AttrNode {
   return Attr("keytype", value);
 }
 
@@ -1602,7 +1602,7 @@ export function Keytype(value: AttributeValue): AttributeNode {
  * // Renders as: kind="value"
  * ```
  */
-export function Kind(value: AttributeValue): AttributeNode {
+export function Kind(value: AttributeValue): AttrNode {
   return Attr("kind", value);
 }
 
@@ -1617,7 +1617,7 @@ export function Kind(value: AttributeValue): AttributeNode {
  * // Renders as: label="value"
  * ```
  */
-export function LabelAttr(value: AttributeValue): AttributeNode {
+export function LabelAttr(value: AttributeValue): AttrNode {
   return Attr("label", value);
 }
 
@@ -1632,7 +1632,7 @@ export function LabelAttr(value: AttributeValue): AttributeNode {
  * // Renders as: lang="value"
  * ```
  */
-export function Lang(value: AttributeValue): AttributeNode {
+export function Lang(value: AttributeValue): AttrNode {
   return Attr("lang", value);
 }
 
@@ -1647,7 +1647,7 @@ export function Lang(value: AttributeValue): AttributeNode {
  * // Renders as: language="value"
  * ```
  */
-export function Language(value: AttributeValue): AttributeNode {
+export function Language(value: AttributeValue): AttrNode {
   return Attr("language", value);
 }
 
@@ -1662,7 +1662,7 @@ export function Language(value: AttributeValue): AttributeNode {
  * // Renders as: list="value"
  * ```
  */
-export function List(value: AttributeValue): AttributeNode {
+export function List(value: AttributeValue): AttrNode {
   return Attr("list", value);
 }
 
@@ -1677,7 +1677,7 @@ export function List(value: AttributeValue): AttributeNode {
  * // Renders as: loading="value"
  * ```
  */
-export function Loading(value: AttributeValue): AttributeNode {
+export function Loading(value: AttributeValue): AttrNode {
   return Attr("loading", value);
 }
 
@@ -1692,7 +1692,7 @@ export function Loading(value: AttributeValue): AttributeNode {
  * // Renders as: longdesc="value"
  * ```
  */
-export function Longdesc(value: AttributeValue): AttributeNode {
+export function Longdesc(value: AttributeValue): AttrNode {
   return Attr("longdesc", value);
 }
 
@@ -1726,7 +1726,7 @@ export function Loop(value: boolean): Node {
  * // Renders as: low="value"
  * ```
  */
-export function Low(value: AttributeValue): AttributeNode {
+export function Low(value: AttributeValue): AttrNode {
   return Attr("low", value);
 }
 
@@ -1741,7 +1741,7 @@ export function Low(value: AttributeValue): AttributeNode {
  * // Renders as: manifest="value"
  * ```
  */
-export function Manifest(value: AttributeValue): AttributeNode {
+export function Manifest(value: AttributeValue): AttrNode {
   return Attr("manifest", value);
 }
 
@@ -1756,7 +1756,7 @@ export function Manifest(value: AttributeValue): AttributeNode {
  * // Renders as: marginheight="value"
  * ```
  */
-export function Marginheight(value: AttributeValue): AttributeNode {
+export function Marginheight(value: AttributeValue): AttrNode {
   return Attr("marginheight", value);
 }
 
@@ -1771,7 +1771,7 @@ export function Marginheight(value: AttributeValue): AttributeNode {
  * // Renders as: marginwidth="value"
  * ```
  */
-export function Marginwidth(value: AttributeValue): AttributeNode {
+export function Marginwidth(value: AttributeValue): AttrNode {
   return Attr("marginwidth", value);
 }
 
@@ -1786,7 +1786,7 @@ export function Marginwidth(value: AttributeValue): AttributeNode {
  * // Renders as: max="value"
  * ```
  */
-export function Max(value: AttributeValue): AttributeNode {
+export function Max(value: AttributeValue): AttrNode {
   return Attr("max", value);
 }
 
@@ -1801,7 +1801,7 @@ export function Max(value: AttributeValue): AttributeNode {
  * // Renders as: maxlength="value"
  * ```
  */
-export function Maxlength(value: AttributeValue): AttributeNode {
+export function Maxlength(value: AttributeValue): AttrNode {
   return Attr("maxlength", value);
 }
 
@@ -1816,7 +1816,7 @@ export function Maxlength(value: AttributeValue): AttributeNode {
  * // Renders as: media="value"
  * ```
  */
-export function Media(value: AttributeValue): AttributeNode {
+export function Media(value: AttributeValue): AttrNode {
   return Attr("media", value);
 }
 
@@ -1831,7 +1831,7 @@ export function Media(value: AttributeValue): AttributeNode {
  * // Renders as: method="value"
  * ```
  */
-export function Method(value: AttributeValue): AttributeNode {
+export function Method(value: AttributeValue): AttrNode {
   return Attr("method", value);
 }
 
@@ -1846,7 +1846,7 @@ export function Method(value: AttributeValue): AttributeNode {
  * // Renders as: min="value"
  * ```
  */
-export function Min(value: AttributeValue): AttributeNode {
+export function Min(value: AttributeValue): AttrNode {
   return Attr("min", value);
 }
 
@@ -1861,7 +1861,7 @@ export function Min(value: AttributeValue): AttributeNode {
  * // Renders as: minlength="value"
  * ```
  */
-export function Minlength(value: AttributeValue): AttributeNode {
+export function Minlength(value: AttributeValue): AttrNode {
   return Attr("minlength", value);
 }
 
@@ -1914,7 +1914,7 @@ export function Muted(value: boolean): Node {
  * // Renders as: name="value"
  * ```
  */
-export function Name(value: AttributeValue): AttributeNode {
+export function Name(value: AttributeValue): AttrNode {
   return Attr("name", value);
 }
 
@@ -1929,7 +1929,7 @@ export function Name(value: AttributeValue): AttributeNode {
  * // Renders as: nohref="value"
  * ```
  */
-export function Nohref(value: AttributeValue): AttributeNode {
+export function Nohref(value: AttributeValue): AttrNode {
   return Attr("nohref", value);
 }
 
@@ -1963,7 +1963,7 @@ export function Nomodule(value: boolean): Node {
  * // Renders as: nonce="value"
  * ```
  */
-export function Nonce(value: AttributeValue): AttributeNode {
+export function Nonce(value: AttributeValue): AttrNode {
   return Attr("nonce", value);
 }
 
@@ -1978,7 +1978,7 @@ export function Nonce(value: AttributeValue): AttributeNode {
  * // Renders as: noresize="value"
  * ```
  */
-export function Noresize(value: AttributeValue): AttributeNode {
+export function Noresize(value: AttributeValue): AttrNode {
   return Attr("noresize", value);
 }
 
@@ -1993,7 +1993,7 @@ export function Noresize(value: AttributeValue): AttributeNode {
  * // Renders as: noshade="value"
  * ```
  */
-export function Noshade(value: AttributeValue): AttributeNode {
+export function Noshade(value: AttributeValue): AttrNode {
   return Attr("noshade", value);
 }
 
@@ -2027,7 +2027,7 @@ export function Novalidate(value: boolean): Node {
  * // Renders as: nowrap="value"
  * ```
  */
-export function Nowrap(value: AttributeValue): AttributeNode {
+export function Nowrap(value: AttributeValue): AttrNode {
   return Attr("nowrap", value);
 }
 
@@ -2042,7 +2042,7 @@ export function Nowrap(value: AttributeValue): AttributeNode {
  * // Renders as: onabort="value"
  * ```
  */
-export function Onabort(value: AttributeValue): AttributeNode {
+export function Onabort(value: AttributeValue): AttrNode {
   return Attr("onabort", value);
 }
 
@@ -2057,7 +2057,7 @@ export function Onabort(value: AttributeValue): AttributeNode {
  * // Renders as: onanimationcancel="value"
  * ```
  */
-export function Onanimationcancel(value: AttributeValue): AttributeNode {
+export function Onanimationcancel(value: AttributeValue): AttrNode {
   return Attr("onanimationcancel", value);
 }
 
@@ -2072,7 +2072,7 @@ export function Onanimationcancel(value: AttributeValue): AttributeNode {
  * // Renders as: onanimationend="value"
  * ```
  */
-export function Onanimationend(value: AttributeValue): AttributeNode {
+export function Onanimationend(value: AttributeValue): AttrNode {
   return Attr("onanimationend", value);
 }
 
@@ -2087,7 +2087,7 @@ export function Onanimationend(value: AttributeValue): AttributeNode {
  * // Renders as: onanimationiteration="value"
  * ```
  */
-export function Onanimationiteration(value: AttributeValue): AttributeNode {
+export function Onanimationiteration(value: AttributeValue): AttrNode {
   return Attr("onanimationiteration", value);
 }
 
@@ -2102,7 +2102,7 @@ export function Onanimationiteration(value: AttributeValue): AttributeNode {
  * // Renders as: onanimationstart="value"
  * ```
  */
-export function Onanimationstart(value: AttributeValue): AttributeNode {
+export function Onanimationstart(value: AttributeValue): AttrNode {
   return Attr("onanimationstart", value);
 }
 
@@ -2117,7 +2117,7 @@ export function Onanimationstart(value: AttributeValue): AttributeNode {
  * // Renders as: onauxclick="value"
  * ```
  */
-export function Onauxclick(value: AttributeValue): AttributeNode {
+export function Onauxclick(value: AttributeValue): AttrNode {
   return Attr("onauxclick", value);
 }
 
@@ -2132,7 +2132,7 @@ export function Onauxclick(value: AttributeValue): AttributeNode {
  * // Renders as: onbeforeinput="value"
  * ```
  */
-export function Onbeforeinput(value: AttributeValue): AttributeNode {
+export function Onbeforeinput(value: AttributeValue): AttrNode {
   return Attr("onbeforeinput", value);
 }
 
@@ -2147,7 +2147,7 @@ export function Onbeforeinput(value: AttributeValue): AttributeNode {
  * // Renders as: onbeforematch="value"
  * ```
  */
-export function Onbeforematch(value: AttributeValue): AttributeNode {
+export function Onbeforematch(value: AttributeValue): AttrNode {
   return Attr("onbeforematch", value);
 }
 
@@ -2162,7 +2162,7 @@ export function Onbeforematch(value: AttributeValue): AttributeNode {
  * // Renders as: onbeforetoggle="value"
  * ```
  */
-export function Onbeforetoggle(value: AttributeValue): AttributeNode {
+export function Onbeforetoggle(value: AttributeValue): AttrNode {
   return Attr("onbeforetoggle", value);
 }
 
@@ -2177,7 +2177,7 @@ export function Onbeforetoggle(value: AttributeValue): AttributeNode {
  * // Renders as: onblur="value"
  * ```
  */
-export function Onblur(value: AttributeValue): AttributeNode {
+export function Onblur(value: AttributeValue): AttrNode {
   return Attr("onblur", value);
 }
 
@@ -2192,7 +2192,7 @@ export function Onblur(value: AttributeValue): AttributeNode {
  * // Renders as: oncancel="value"
  * ```
  */
-export function Oncancel(value: AttributeValue): AttributeNode {
+export function Oncancel(value: AttributeValue): AttrNode {
   return Attr("oncancel", value);
 }
 
@@ -2207,7 +2207,7 @@ export function Oncancel(value: AttributeValue): AttributeNode {
  * // Renders as: oncanplay="value"
  * ```
  */
-export function Oncanplay(value: AttributeValue): AttributeNode {
+export function Oncanplay(value: AttributeValue): AttrNode {
   return Attr("oncanplay", value);
 }
 
@@ -2222,7 +2222,7 @@ export function Oncanplay(value: AttributeValue): AttributeNode {
  * // Renders as: oncanplaythrough="value"
  * ```
  */
-export function Oncanplaythrough(value: AttributeValue): AttributeNode {
+export function Oncanplaythrough(value: AttributeValue): AttrNode {
   return Attr("oncanplaythrough", value);
 }
 
@@ -2237,7 +2237,7 @@ export function Oncanplaythrough(value: AttributeValue): AttributeNode {
  * // Renders as: onchange="value"
  * ```
  */
-export function Onchange(value: AttributeValue): AttributeNode {
+export function Onchange(value: AttributeValue): AttrNode {
   return Attr("onchange", value);
 }
 
@@ -2252,7 +2252,7 @@ export function Onchange(value: AttributeValue): AttributeNode {
  * // Renders as: onclick="value"
  * ```
  */
-export function Onclick(value: AttributeValue): AttributeNode {
+export function Onclick(value: AttributeValue): AttrNode {
   return Attr("onclick", value);
 }
 
@@ -2267,7 +2267,7 @@ export function Onclick(value: AttributeValue): AttributeNode {
  * // Renders as: onclose="value"
  * ```
  */
-export function Onclose(value: AttributeValue): AttributeNode {
+export function Onclose(value: AttributeValue): AttrNode {
   return Attr("onclose", value);
 }
 
@@ -2282,7 +2282,7 @@ export function Onclose(value: AttributeValue): AttributeNode {
  * // Renders as: oncontextlost="value"
  * ```
  */
-export function Oncontextlost(value: AttributeValue): AttributeNode {
+export function Oncontextlost(value: AttributeValue): AttrNode {
   return Attr("oncontextlost", value);
 }
 
@@ -2297,7 +2297,7 @@ export function Oncontextlost(value: AttributeValue): AttributeNode {
  * // Renders as: oncontextmenu="value"
  * ```
  */
-export function Oncontextmenu(value: AttributeValue): AttributeNode {
+export function Oncontextmenu(value: AttributeValue): AttrNode {
   return Attr("oncontextmenu", value);
 }
 
@@ -2312,7 +2312,7 @@ export function Oncontextmenu(value: AttributeValue): AttributeNode {
  * // Renders as: oncontextrestored="value"
  * ```
  */
-export function Oncontextrestored(value: AttributeValue): AttributeNode {
+export function Oncontextrestored(value: AttributeValue): AttrNode {
   return Attr("oncontextrestored", value);
 }
 
@@ -2327,7 +2327,7 @@ export function Oncontextrestored(value: AttributeValue): AttributeNode {
  * // Renders as: oncopy="value"
  * ```
  */
-export function Oncopy(value: AttributeValue): AttributeNode {
+export function Oncopy(value: AttributeValue): AttrNode {
   return Attr("oncopy", value);
 }
 
@@ -2342,7 +2342,7 @@ export function Oncopy(value: AttributeValue): AttributeNode {
  * // Renders as: oncuechange="value"
  * ```
  */
-export function Oncuechange(value: AttributeValue): AttributeNode {
+export function Oncuechange(value: AttributeValue): AttrNode {
   return Attr("oncuechange", value);
 }
 
@@ -2357,7 +2357,7 @@ export function Oncuechange(value: AttributeValue): AttributeNode {
  * // Renders as: oncut="value"
  * ```
  */
-export function Oncut(value: AttributeValue): AttributeNode {
+export function Oncut(value: AttributeValue): AttrNode {
   return Attr("oncut", value);
 }
 
@@ -2372,7 +2372,7 @@ export function Oncut(value: AttributeValue): AttributeNode {
  * // Renders as: ondblclick="value"
  * ```
  */
-export function Ondblclick(value: AttributeValue): AttributeNode {
+export function Ondblclick(value: AttributeValue): AttrNode {
   return Attr("ondblclick", value);
 }
 
@@ -2387,7 +2387,7 @@ export function Ondblclick(value: AttributeValue): AttributeNode {
  * // Renders as: ondrag="value"
  * ```
  */
-export function Ondrag(value: AttributeValue): AttributeNode {
+export function Ondrag(value: AttributeValue): AttrNode {
   return Attr("ondrag", value);
 }
 
@@ -2402,7 +2402,7 @@ export function Ondrag(value: AttributeValue): AttributeNode {
  * // Renders as: ondragend="value"
  * ```
  */
-export function Ondragend(value: AttributeValue): AttributeNode {
+export function Ondragend(value: AttributeValue): AttrNode {
   return Attr("ondragend", value);
 }
 
@@ -2417,7 +2417,7 @@ export function Ondragend(value: AttributeValue): AttributeNode {
  * // Renders as: ondragenter="value"
  * ```
  */
-export function Ondragenter(value: AttributeValue): AttributeNode {
+export function Ondragenter(value: AttributeValue): AttrNode {
   return Attr("ondragenter", value);
 }
 
@@ -2432,7 +2432,7 @@ export function Ondragenter(value: AttributeValue): AttributeNode {
  * // Renders as: ondragleave="value"
  * ```
  */
-export function Ondragleave(value: AttributeValue): AttributeNode {
+export function Ondragleave(value: AttributeValue): AttrNode {
   return Attr("ondragleave", value);
 }
 
@@ -2447,7 +2447,7 @@ export function Ondragleave(value: AttributeValue): AttributeNode {
  * // Renders as: ondragover="value"
  * ```
  */
-export function Ondragover(value: AttributeValue): AttributeNode {
+export function Ondragover(value: AttributeValue): AttrNode {
   return Attr("ondragover", value);
 }
 
@@ -2462,7 +2462,7 @@ export function Ondragover(value: AttributeValue): AttributeNode {
  * // Renders as: ondragstart="value"
  * ```
  */
-export function Ondragstart(value: AttributeValue): AttributeNode {
+export function Ondragstart(value: AttributeValue): AttrNode {
   return Attr("ondragstart", value);
 }
 
@@ -2477,7 +2477,7 @@ export function Ondragstart(value: AttributeValue): AttributeNode {
  * // Renders as: ondrop="value"
  * ```
  */
-export function Ondrop(value: AttributeValue): AttributeNode {
+export function Ondrop(value: AttributeValue): AttrNode {
   return Attr("ondrop", value);
 }
 
@@ -2492,7 +2492,7 @@ export function Ondrop(value: AttributeValue): AttributeNode {
  * // Renders as: ondurationchange="value"
  * ```
  */
-export function Ondurationchange(value: AttributeValue): AttributeNode {
+export function Ondurationchange(value: AttributeValue): AttrNode {
   return Attr("ondurationchange", value);
 }
 
@@ -2507,7 +2507,7 @@ export function Ondurationchange(value: AttributeValue): AttributeNode {
  * // Renders as: onemptied="value"
  * ```
  */
-export function Onemptied(value: AttributeValue): AttributeNode {
+export function Onemptied(value: AttributeValue): AttrNode {
   return Attr("onemptied", value);
 }
 
@@ -2522,7 +2522,7 @@ export function Onemptied(value: AttributeValue): AttributeNode {
  * // Renders as: onended="value"
  * ```
  */
-export function Onended(value: AttributeValue): AttributeNode {
+export function Onended(value: AttributeValue): AttrNode {
   return Attr("onended", value);
 }
 
@@ -2537,7 +2537,7 @@ export function Onended(value: AttributeValue): AttributeNode {
  * // Renders as: onerror="value"
  * ```
  */
-export function Onerror(value: AttributeValue): AttributeNode {
+export function Onerror(value: AttributeValue): AttrNode {
   return Attr("onerror", value);
 }
 
@@ -2552,7 +2552,7 @@ export function Onerror(value: AttributeValue): AttributeNode {
  * // Renders as: onfocus="value"
  * ```
  */
-export function Onfocus(value: AttributeValue): AttributeNode {
+export function Onfocus(value: AttributeValue): AttrNode {
   return Attr("onfocus", value);
 }
 
@@ -2567,7 +2567,7 @@ export function Onfocus(value: AttributeValue): AttributeNode {
  * // Renders as: onformdata="value"
  * ```
  */
-export function Onformdata(value: AttributeValue): AttributeNode {
+export function Onformdata(value: AttributeValue): AttrNode {
   return Attr("onformdata", value);
 }
 
@@ -2582,7 +2582,7 @@ export function Onformdata(value: AttributeValue): AttributeNode {
  * // Renders as: ongotpointercapture="value"
  * ```
  */
-export function Ongotpointercapture(value: AttributeValue): AttributeNode {
+export function Ongotpointercapture(value: AttributeValue): AttrNode {
   return Attr("ongotpointercapture", value);
 }
 
@@ -2597,7 +2597,7 @@ export function Ongotpointercapture(value: AttributeValue): AttributeNode {
  * // Renders as: oninput="value"
  * ```
  */
-export function Oninput(value: AttributeValue): AttributeNode {
+export function Oninput(value: AttributeValue): AttrNode {
   return Attr("oninput", value);
 }
 
@@ -2612,7 +2612,7 @@ export function Oninput(value: AttributeValue): AttributeNode {
  * // Renders as: oninvalid="value"
  * ```
  */
-export function Oninvalid(value: AttributeValue): AttributeNode {
+export function Oninvalid(value: AttributeValue): AttrNode {
   return Attr("oninvalid", value);
 }
 
@@ -2627,7 +2627,7 @@ export function Oninvalid(value: AttributeValue): AttributeNode {
  * // Renders as: onkeydown="value"
  * ```
  */
-export function Onkeydown(value: AttributeValue): AttributeNode {
+export function Onkeydown(value: AttributeValue): AttrNode {
   return Attr("onkeydown", value);
 }
 
@@ -2642,7 +2642,7 @@ export function Onkeydown(value: AttributeValue): AttributeNode {
  * // Renders as: onkeypress="value"
  * ```
  */
-export function Onkeypress(value: AttributeValue): AttributeNode {
+export function Onkeypress(value: AttributeValue): AttrNode {
   return Attr("onkeypress", value);
 }
 
@@ -2657,7 +2657,7 @@ export function Onkeypress(value: AttributeValue): AttributeNode {
  * // Renders as: onkeyup="value"
  * ```
  */
-export function Onkeyup(value: AttributeValue): AttributeNode {
+export function Onkeyup(value: AttributeValue): AttrNode {
   return Attr("onkeyup", value);
 }
 
@@ -2672,7 +2672,7 @@ export function Onkeyup(value: AttributeValue): AttributeNode {
  * // Renders as: onload="value"
  * ```
  */
-export function Onload(value: AttributeValue): AttributeNode {
+export function Onload(value: AttributeValue): AttrNode {
   return Attr("onload", value);
 }
 
@@ -2687,7 +2687,7 @@ export function Onload(value: AttributeValue): AttributeNode {
  * // Renders as: onloadeddata="value"
  * ```
  */
-export function Onloadeddata(value: AttributeValue): AttributeNode {
+export function Onloadeddata(value: AttributeValue): AttrNode {
   return Attr("onloadeddata", value);
 }
 
@@ -2702,7 +2702,7 @@ export function Onloadeddata(value: AttributeValue): AttributeNode {
  * // Renders as: onloadedmetadata="value"
  * ```
  */
-export function Onloadedmetadata(value: AttributeValue): AttributeNode {
+export function Onloadedmetadata(value: AttributeValue): AttrNode {
   return Attr("onloadedmetadata", value);
 }
 
@@ -2717,7 +2717,7 @@ export function Onloadedmetadata(value: AttributeValue): AttributeNode {
  * // Renders as: onloadstart="value"
  * ```
  */
-export function Onloadstart(value: AttributeValue): AttributeNode {
+export function Onloadstart(value: AttributeValue): AttrNode {
   return Attr("onloadstart", value);
 }
 
@@ -2732,7 +2732,7 @@ export function Onloadstart(value: AttributeValue): AttributeNode {
  * // Renders as: onlostpointercapture="value"
  * ```
  */
-export function Onlostpointercapture(value: AttributeValue): AttributeNode {
+export function Onlostpointercapture(value: AttributeValue): AttrNode {
   return Attr("onlostpointercapture", value);
 }
 
@@ -2747,7 +2747,7 @@ export function Onlostpointercapture(value: AttributeValue): AttributeNode {
  * // Renders as: onmousedown="value"
  * ```
  */
-export function Onmousedown(value: AttributeValue): AttributeNode {
+export function Onmousedown(value: AttributeValue): AttrNode {
   return Attr("onmousedown", value);
 }
 
@@ -2762,7 +2762,7 @@ export function Onmousedown(value: AttributeValue): AttributeNode {
  * // Renders as: onmouseenter="value"
  * ```
  */
-export function Onmouseenter(value: AttributeValue): AttributeNode {
+export function Onmouseenter(value: AttributeValue): AttrNode {
   return Attr("onmouseenter", value);
 }
 
@@ -2777,7 +2777,7 @@ export function Onmouseenter(value: AttributeValue): AttributeNode {
  * // Renders as: onmouseleave="value"
  * ```
  */
-export function Onmouseleave(value: AttributeValue): AttributeNode {
+export function Onmouseleave(value: AttributeValue): AttrNode {
   return Attr("onmouseleave", value);
 }
 
@@ -2792,7 +2792,7 @@ export function Onmouseleave(value: AttributeValue): AttributeNode {
  * // Renders as: onmousemove="value"
  * ```
  */
-export function Onmousemove(value: AttributeValue): AttributeNode {
+export function Onmousemove(value: AttributeValue): AttrNode {
   return Attr("onmousemove", value);
 }
 
@@ -2807,7 +2807,7 @@ export function Onmousemove(value: AttributeValue): AttributeNode {
  * // Renders as: onmouseout="value"
  * ```
  */
-export function Onmouseout(value: AttributeValue): AttributeNode {
+export function Onmouseout(value: AttributeValue): AttrNode {
   return Attr("onmouseout", value);
 }
 
@@ -2822,7 +2822,7 @@ export function Onmouseout(value: AttributeValue): AttributeNode {
  * // Renders as: onmouseover="value"
  * ```
  */
-export function Onmouseover(value: AttributeValue): AttributeNode {
+export function Onmouseover(value: AttributeValue): AttrNode {
   return Attr("onmouseover", value);
 }
 
@@ -2837,7 +2837,7 @@ export function Onmouseover(value: AttributeValue): AttributeNode {
  * // Renders as: onmouseup="value"
  * ```
  */
-export function Onmouseup(value: AttributeValue): AttributeNode {
+export function Onmouseup(value: AttributeValue): AttrNode {
   return Attr("onmouseup", value);
 }
 
@@ -2852,7 +2852,7 @@ export function Onmouseup(value: AttributeValue): AttributeNode {
  * // Renders as: onpaste="value"
  * ```
  */
-export function Onpaste(value: AttributeValue): AttributeNode {
+export function Onpaste(value: AttributeValue): AttrNode {
   return Attr("onpaste", value);
 }
 
@@ -2867,7 +2867,7 @@ export function Onpaste(value: AttributeValue): AttributeNode {
  * // Renders as: onpause="value"
  * ```
  */
-export function Onpause(value: AttributeValue): AttributeNode {
+export function Onpause(value: AttributeValue): AttrNode {
   return Attr("onpause", value);
 }
 
@@ -2882,7 +2882,7 @@ export function Onpause(value: AttributeValue): AttributeNode {
  * // Renders as: onplay="value"
  * ```
  */
-export function Onplay(value: AttributeValue): AttributeNode {
+export function Onplay(value: AttributeValue): AttrNode {
   return Attr("onplay", value);
 }
 
@@ -2897,7 +2897,7 @@ export function Onplay(value: AttributeValue): AttributeNode {
  * // Renders as: onplaying="value"
  * ```
  */
-export function Onplaying(value: AttributeValue): AttributeNode {
+export function Onplaying(value: AttributeValue): AttrNode {
   return Attr("onplaying", value);
 }
 
@@ -2912,7 +2912,7 @@ export function Onplaying(value: AttributeValue): AttributeNode {
  * // Renders as: onpointercancel="value"
  * ```
  */
-export function Onpointercancel(value: AttributeValue): AttributeNode {
+export function Onpointercancel(value: AttributeValue): AttrNode {
   return Attr("onpointercancel", value);
 }
 
@@ -2927,7 +2927,7 @@ export function Onpointercancel(value: AttributeValue): AttributeNode {
  * // Renders as: onpointerdown="value"
  * ```
  */
-export function Onpointerdown(value: AttributeValue): AttributeNode {
+export function Onpointerdown(value: AttributeValue): AttrNode {
   return Attr("onpointerdown", value);
 }
 
@@ -2942,7 +2942,7 @@ export function Onpointerdown(value: AttributeValue): AttributeNode {
  * // Renders as: onpointerenter="value"
  * ```
  */
-export function Onpointerenter(value: AttributeValue): AttributeNode {
+export function Onpointerenter(value: AttributeValue): AttrNode {
   return Attr("onpointerenter", value);
 }
 
@@ -2957,7 +2957,7 @@ export function Onpointerenter(value: AttributeValue): AttributeNode {
  * // Renders as: onpointerleave="value"
  * ```
  */
-export function Onpointerleave(value: AttributeValue): AttributeNode {
+export function Onpointerleave(value: AttributeValue): AttrNode {
   return Attr("onpointerleave", value);
 }
 
@@ -2972,7 +2972,7 @@ export function Onpointerleave(value: AttributeValue): AttributeNode {
  * // Renders as: onpointermove="value"
  * ```
  */
-export function Onpointermove(value: AttributeValue): AttributeNode {
+export function Onpointermove(value: AttributeValue): AttrNode {
   return Attr("onpointermove", value);
 }
 
@@ -2987,7 +2987,7 @@ export function Onpointermove(value: AttributeValue): AttributeNode {
  * // Renders as: onpointerout="value"
  * ```
  */
-export function Onpointerout(value: AttributeValue): AttributeNode {
+export function Onpointerout(value: AttributeValue): AttrNode {
   return Attr("onpointerout", value);
 }
 
@@ -3002,7 +3002,7 @@ export function Onpointerout(value: AttributeValue): AttributeNode {
  * // Renders as: onpointerover="value"
  * ```
  */
-export function Onpointerover(value: AttributeValue): AttributeNode {
+export function Onpointerover(value: AttributeValue): AttrNode {
   return Attr("onpointerover", value);
 }
 
@@ -3017,7 +3017,7 @@ export function Onpointerover(value: AttributeValue): AttributeNode {
  * // Renders as: onpointerup="value"
  * ```
  */
-export function Onpointerup(value: AttributeValue): AttributeNode {
+export function Onpointerup(value: AttributeValue): AttrNode {
   return Attr("onpointerup", value);
 }
 
@@ -3032,7 +3032,7 @@ export function Onpointerup(value: AttributeValue): AttributeNode {
  * // Renders as: onprogress="value"
  * ```
  */
-export function Onprogress(value: AttributeValue): AttributeNode {
+export function Onprogress(value: AttributeValue): AttrNode {
   return Attr("onprogress", value);
 }
 
@@ -3047,7 +3047,7 @@ export function Onprogress(value: AttributeValue): AttributeNode {
  * // Renders as: onratechange="value"
  * ```
  */
-export function Onratechange(value: AttributeValue): AttributeNode {
+export function Onratechange(value: AttributeValue): AttrNode {
   return Attr("onratechange", value);
 }
 
@@ -3062,7 +3062,7 @@ export function Onratechange(value: AttributeValue): AttributeNode {
  * // Renders as: onreset="value"
  * ```
  */
-export function Onreset(value: AttributeValue): AttributeNode {
+export function Onreset(value: AttributeValue): AttrNode {
   return Attr("onreset", value);
 }
 
@@ -3077,7 +3077,7 @@ export function Onreset(value: AttributeValue): AttributeNode {
  * // Renders as: onresize="value"
  * ```
  */
-export function Onresize(value: AttributeValue): AttributeNode {
+export function Onresize(value: AttributeValue): AttrNode {
   return Attr("onresize", value);
 }
 
@@ -3092,7 +3092,7 @@ export function Onresize(value: AttributeValue): AttributeNode {
  * // Renders as: onscroll="value"
  * ```
  */
-export function Onscroll(value: AttributeValue): AttributeNode {
+export function Onscroll(value: AttributeValue): AttrNode {
   return Attr("onscroll", value);
 }
 
@@ -3107,7 +3107,7 @@ export function Onscroll(value: AttributeValue): AttributeNode {
  * // Renders as: onscrollend="value"
  * ```
  */
-export function Onscrollend(value: AttributeValue): AttributeNode {
+export function Onscrollend(value: AttributeValue): AttrNode {
   return Attr("onscrollend", value);
 }
 
@@ -3122,7 +3122,7 @@ export function Onscrollend(value: AttributeValue): AttributeNode {
  * // Renders as: onsecuritypolicyviolation="value"
  * ```
  */
-export function Onsecuritypolicyviolation(value: AttributeValue): AttributeNode {
+export function Onsecuritypolicyviolation(value: AttributeValue): AttrNode {
   return Attr("onsecuritypolicyviolation", value);
 }
 
@@ -3137,7 +3137,7 @@ export function Onsecuritypolicyviolation(value: AttributeValue): AttributeNode 
  * // Renders as: onseeked="value"
  * ```
  */
-export function Onseeked(value: AttributeValue): AttributeNode {
+export function Onseeked(value: AttributeValue): AttrNode {
   return Attr("onseeked", value);
 }
 
@@ -3152,7 +3152,7 @@ export function Onseeked(value: AttributeValue): AttributeNode {
  * // Renders as: onseeking="value"
  * ```
  */
-export function Onseeking(value: AttributeValue): AttributeNode {
+export function Onseeking(value: AttributeValue): AttrNode {
   return Attr("onseeking", value);
 }
 
@@ -3167,7 +3167,7 @@ export function Onseeking(value: AttributeValue): AttributeNode {
  * // Renders as: onselect="value"
  * ```
  */
-export function Onselect(value: AttributeValue): AttributeNode {
+export function Onselect(value: AttributeValue): AttrNode {
   return Attr("onselect", value);
 }
 
@@ -3182,7 +3182,7 @@ export function Onselect(value: AttributeValue): AttributeNode {
  * // Renders as: onslotchange="value"
  * ```
  */
-export function Onslotchange(value: AttributeValue): AttributeNode {
+export function Onslotchange(value: AttributeValue): AttrNode {
   return Attr("onslotchange", value);
 }
 
@@ -3197,7 +3197,7 @@ export function Onslotchange(value: AttributeValue): AttributeNode {
  * // Renders as: onstalled="value"
  * ```
  */
-export function Onstalled(value: AttributeValue): AttributeNode {
+export function Onstalled(value: AttributeValue): AttrNode {
   return Attr("onstalled", value);
 }
 
@@ -3212,7 +3212,7 @@ export function Onstalled(value: AttributeValue): AttributeNode {
  * // Renders as: onsubmit="value"
  * ```
  */
-export function Onsubmit(value: AttributeValue): AttributeNode {
+export function Onsubmit(value: AttributeValue): AttrNode {
   return Attr("onsubmit", value);
 }
 
@@ -3227,7 +3227,7 @@ export function Onsubmit(value: AttributeValue): AttributeNode {
  * // Renders as: onsuspend="value"
  * ```
  */
-export function Onsuspend(value: AttributeValue): AttributeNode {
+export function Onsuspend(value: AttributeValue): AttrNode {
   return Attr("onsuspend", value);
 }
 
@@ -3242,7 +3242,7 @@ export function Onsuspend(value: AttributeValue): AttributeNode {
  * // Renders as: ontimeupdate="value"
  * ```
  */
-export function Ontimeupdate(value: AttributeValue): AttributeNode {
+export function Ontimeupdate(value: AttributeValue): AttrNode {
   return Attr("ontimeupdate", value);
 }
 
@@ -3257,7 +3257,7 @@ export function Ontimeupdate(value: AttributeValue): AttributeNode {
  * // Renders as: ontoggle="value"
  * ```
  */
-export function Ontoggle(value: AttributeValue): AttributeNode {
+export function Ontoggle(value: AttributeValue): AttrNode {
   return Attr("ontoggle", value);
 }
 
@@ -3272,7 +3272,7 @@ export function Ontoggle(value: AttributeValue): AttributeNode {
  * // Renders as: ontransitioncancel="value"
  * ```
  */
-export function Ontransitioncancel(value: AttributeValue): AttributeNode {
+export function Ontransitioncancel(value: AttributeValue): AttrNode {
   return Attr("ontransitioncancel", value);
 }
 
@@ -3287,7 +3287,7 @@ export function Ontransitioncancel(value: AttributeValue): AttributeNode {
  * // Renders as: ontransitionend="value"
  * ```
  */
-export function Ontransitionend(value: AttributeValue): AttributeNode {
+export function Ontransitionend(value: AttributeValue): AttrNode {
   return Attr("ontransitionend", value);
 }
 
@@ -3302,7 +3302,7 @@ export function Ontransitionend(value: AttributeValue): AttributeNode {
  * // Renders as: ontransitionrun="value"
  * ```
  */
-export function Ontransitionrun(value: AttributeValue): AttributeNode {
+export function Ontransitionrun(value: AttributeValue): AttrNode {
   return Attr("ontransitionrun", value);
 }
 
@@ -3317,7 +3317,7 @@ export function Ontransitionrun(value: AttributeValue): AttributeNode {
  * // Renders as: ontransitionstart="value"
  * ```
  */
-export function Ontransitionstart(value: AttributeValue): AttributeNode {
+export function Ontransitionstart(value: AttributeValue): AttrNode {
   return Attr("ontransitionstart", value);
 }
 
@@ -3332,7 +3332,7 @@ export function Ontransitionstart(value: AttributeValue): AttributeNode {
  * // Renders as: onvolumechange="value"
  * ```
  */
-export function Onvolumechange(value: AttributeValue): AttributeNode {
+export function Onvolumechange(value: AttributeValue): AttrNode {
   return Attr("onvolumechange", value);
 }
 
@@ -3347,7 +3347,7 @@ export function Onvolumechange(value: AttributeValue): AttributeNode {
  * // Renders as: onwaiting="value"
  * ```
  */
-export function Onwaiting(value: AttributeValue): AttributeNode {
+export function Onwaiting(value: AttributeValue): AttrNode {
   return Attr("onwaiting", value);
 }
 
@@ -3362,7 +3362,7 @@ export function Onwaiting(value: AttributeValue): AttributeNode {
  * // Renders as: onwheel="value"
  * ```
  */
-export function Onwheel(value: AttributeValue): AttributeNode {
+export function Onwheel(value: AttributeValue): AttrNode {
   return Attr("onwheel", value);
 }
 
@@ -3396,7 +3396,7 @@ export function Open(value: boolean): Node {
  * // Renders as: optimum="value"
  * ```
  */
-export function Optimum(value: AttributeValue): AttributeNode {
+export function Optimum(value: AttributeValue): AttrNode {
   return Attr("optimum", value);
 }
 
@@ -3413,7 +3413,7 @@ export function Optimum(value: AttributeValue): AttributeNode {
  */
 export function Part(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("part", ...values);
 }
 
@@ -3428,7 +3428,7 @@ export function Part(
  * // Renders as: pattern="value"
  * ```
  */
-export function Pattern(value: AttributeValue): AttributeNode {
+export function Pattern(value: AttributeValue): AttrNode {
   return Attr("pattern", value);
 }
 
@@ -3445,7 +3445,7 @@ export function Pattern(value: AttributeValue): AttributeNode {
  */
 export function Ping(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("ping", ...values);
 }
 
@@ -3460,7 +3460,7 @@ export function Ping(
  * // Renders as: placeholder="value"
  * ```
  */
-export function Placeholder(value: AttributeValue): AttributeNode {
+export function Placeholder(value: AttributeValue): AttrNode {
   return Attr("placeholder", value);
 }
 
@@ -3494,7 +3494,7 @@ export function Playsinline(value: boolean): Node {
  * // Renders as: popover="value"
  * ```
  */
-export function Popover(value: AttributeValue): AttributeNode {
+export function Popover(value: AttributeValue): AttrNode {
   return Attr("popover", value);
 }
 
@@ -3509,7 +3509,7 @@ export function Popover(value: AttributeValue): AttributeNode {
  * // Renders as: popovertarget="value"
  * ```
  */
-export function Popovertarget(value: AttributeValue): AttributeNode {
+export function Popovertarget(value: AttributeValue): AttrNode {
   return Attr("popovertarget", value);
 }
 
@@ -3524,7 +3524,7 @@ export function Popovertarget(value: AttributeValue): AttributeNode {
  * // Renders as: popovertargetaction="value"
  * ```
  */
-export function Popovertargetaction(value: AttributeValue): AttributeNode {
+export function Popovertargetaction(value: AttributeValue): AttrNode {
   return Attr("popovertargetaction", value);
 }
 
@@ -3539,7 +3539,7 @@ export function Popovertargetaction(value: AttributeValue): AttributeNode {
  * // Renders as: poster="value"
  * ```
  */
-export function Poster(value: AttributeValue): AttributeNode {
+export function Poster(value: AttributeValue): AttrNode {
   return Attr("poster", value);
 }
 
@@ -3554,7 +3554,7 @@ export function Poster(value: AttributeValue): AttributeNode {
  * // Renders as: preload="value"
  * ```
  */
-export function Preload(value: AttributeValue): AttributeNode {
+export function Preload(value: AttributeValue): AttrNode {
   return Attr("preload", value);
 }
 
@@ -3569,7 +3569,7 @@ export function Preload(value: AttributeValue): AttributeNode {
  * // Renders as: radiogroup="value"
  * ```
  */
-export function Radiogroup(value: AttributeValue): AttributeNode {
+export function Radiogroup(value: AttributeValue): AttrNode {
   return Attr("radiogroup", value);
 }
 
@@ -3603,7 +3603,7 @@ export function Readonly(value: boolean): Node {
  * // Renders as: referrerpolicy="value"
  * ```
  */
-export function Referrerpolicy(value: AttributeValue): AttributeNode {
+export function Referrerpolicy(value: AttributeValue): AttrNode {
   return Attr("referrerpolicy", value);
 }
 
@@ -3620,7 +3620,7 @@ export function Referrerpolicy(value: AttributeValue): AttributeNode {
  */
 export function Rel(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("rel", ...values);
 }
 
@@ -3654,7 +3654,7 @@ export function Required(value: boolean): Node {
  * // Renders as: results="value"
  * ```
  */
-export function Results(value: AttributeValue): AttributeNode {
+export function Results(value: AttributeValue): AttrNode {
   return Attr("results", value);
 }
 
@@ -3688,7 +3688,7 @@ export function Reversed(value: boolean): Node {
  * // Renders as: role="value"
  * ```
  */
-export function Role(value: AttributeValue): AttributeNode {
+export function Role(value: AttributeValue): AttrNode {
   return Attr("role", value);
 }
 
@@ -3703,7 +3703,7 @@ export function Role(value: AttributeValue): AttributeNode {
  * // Renders as: rows="value"
  * ```
  */
-export function Rows(value: AttributeValue): AttributeNode {
+export function Rows(value: AttributeValue): AttrNode {
   return Attr("rows", value);
 }
 
@@ -3718,7 +3718,7 @@ export function Rows(value: AttributeValue): AttributeNode {
  * // Renders as: rowspan="value"
  * ```
  */
-export function Rowspan(value: AttributeValue): AttributeNode {
+export function Rowspan(value: AttributeValue): AttrNode {
   return Attr("rowspan", value);
 }
 
@@ -3733,7 +3733,7 @@ export function Rowspan(value: AttributeValue): AttributeNode {
  * // Renders as: rules="value"
  * ```
  */
-export function Rules(value: AttributeValue): AttributeNode {
+export function Rules(value: AttributeValue): AttrNode {
   return Attr("rules", value);
 }
 
@@ -3750,7 +3750,7 @@ export function Rules(value: AttributeValue): AttributeNode {
  */
 export function Sandbox(
   ...values: readonly AttributeValue[]
-): AttributeNode {
+): AttrNode {
   return AttrList("sandbox", ...values);
 }
 
@@ -3765,7 +3765,7 @@ export function Sandbox(
  * // Renders as: scope="value"
  * ```
  */
-export function Scope(value: AttributeValue): AttributeNode {
+export function Scope(value: AttributeValue): AttrNode {
   return Attr("scope", value);
 }
 
@@ -3780,7 +3780,7 @@ export function Scope(value: AttributeValue): AttributeNode {
  * // Renders as: scoped="value"
  * ```
  */
-export function Scoped(value: AttributeValue): AttributeNode {
+export function Scoped(value: AttributeValue): AttrNode {
   return Attr("scoped", value);
 }
 
@@ -3795,7 +3795,7 @@ export function Scoped(value: AttributeValue): AttributeNode {
  * // Renders as: scrolling="value"
  * ```
  */
-export function Scrolling(value: AttributeValue): AttributeNode {
+export function Scrolling(value: AttributeValue): AttrNode {
   return Attr("scrolling", value);
 }
 
@@ -3829,7 +3829,7 @@ export function Selected(value: boolean): Node {
  * // Renders as: shape="value"
  * ```
  */
-export function Shape(value: AttributeValue): AttributeNode {
+export function Shape(value: AttributeValue): AttrNode {
   return Attr("shape", value);
 }
 
@@ -3844,7 +3844,7 @@ export function Shape(value: AttributeValue): AttributeNode {
  * // Renders as: size="value"
  * ```
  */
-export function Size(value: AttributeValue): AttributeNode {
+export function Size(value: AttributeValue): AttrNode {
   return Attr("size", value);
 }
 
@@ -3859,7 +3859,7 @@ export function Size(value: AttributeValue): AttributeNode {
  * // Renders as: sizes="value"
  * ```
  */
-export function Sizes(value: AttributeValue): AttributeNode {
+export function Sizes(value: AttributeValue): AttrNode {
   return Attr("sizes", value);
 }
 
@@ -3874,7 +3874,7 @@ export function Sizes(value: AttributeValue): AttributeNode {
  * // Renders as: slot="value"
  * ```
  */
-export function SlotAttr(value: AttributeValue): AttributeNode {
+export function SlotAttr(value: AttributeValue): AttrNode {
   return Attr("slot", value);
 }
 
@@ -3889,7 +3889,7 @@ export function SlotAttr(value: AttributeValue): AttributeNode {
  * // Renders as: span="value"
  * ```
  */
-export function SpanAttr(value: AttributeValue): AttributeNode {
+export function SpanAttr(value: AttributeValue): AttrNode {
   return Attr("span", value);
 }
 
@@ -3904,7 +3904,7 @@ export function SpanAttr(value: AttributeValue): AttributeNode {
  * // Renders as: spellcheck="value"
  * ```
  */
-export function Spellcheck(value: AttributeValue): AttributeNode {
+export function Spellcheck(value: AttributeValue): AttrNode {
   return Attr("spellcheck", value);
 }
 
@@ -3919,7 +3919,7 @@ export function Spellcheck(value: AttributeValue): AttributeNode {
  * // Renders as: src="value"
  * ```
  */
-export function Src(value: AttributeValue): AttributeNode {
+export function Src(value: AttributeValue): AttrNode {
   return Attr("src", value);
 }
 
@@ -3934,7 +3934,7 @@ export function Src(value: AttributeValue): AttributeNode {
  * // Renders as: srcdoc="value"
  * ```
  */
-export function Srcdoc(value: AttributeValue): AttributeNode {
+export function Srcdoc(value: AttributeValue): AttrNode {
   return Attr("srcdoc", value);
 }
 
@@ -3949,7 +3949,7 @@ export function Srcdoc(value: AttributeValue): AttributeNode {
  * // Renders as: srclang="value"
  * ```
  */
-export function Srclang(value: AttributeValue): AttributeNode {
+export function Srclang(value: AttributeValue): AttrNode {
   return Attr("srclang", value);
 }
 
@@ -3964,7 +3964,7 @@ export function Srclang(value: AttributeValue): AttributeNode {
  * // Renders as: srcset="value"
  * ```
  */
-export function Srcset(value: AttributeValue): AttributeNode {
+export function Srcset(value: AttributeValue): AttrNode {
   return Attr("srcset", value);
 }
 
@@ -3979,7 +3979,7 @@ export function Srcset(value: AttributeValue): AttributeNode {
  * // Renders as: standby="value"
  * ```
  */
-export function Standby(value: AttributeValue): AttributeNode {
+export function Standby(value: AttributeValue): AttrNode {
   return Attr("standby", value);
 }
 
@@ -3994,7 +3994,7 @@ export function Standby(value: AttributeValue): AttributeNode {
  * // Renders as: start="value"
  * ```
  */
-export function Start(value: AttributeValue): AttributeNode {
+export function Start(value: AttributeValue): AttrNode {
   return Attr("start", value);
 }
 
@@ -4009,7 +4009,7 @@ export function Start(value: AttributeValue): AttributeNode {
  * // Renders as: step="value"
  * ```
  */
-export function Step(value: AttributeValue): AttributeNode {
+export function Step(value: AttributeValue): AttrNode {
   return Attr("step", value);
 }
 
@@ -4024,7 +4024,7 @@ export function Step(value: AttributeValue): AttributeNode {
  * // Renders as: style="value"
  * ```
  */
-export function StyleAttr(value: AttributeValue): AttributeNode {
+export function StyleAttr(value: AttributeValue): AttrNode {
   return Attr("style", value);
 }
 
@@ -4039,7 +4039,7 @@ export function StyleAttr(value: AttributeValue): AttributeNode {
  * // Renders as: summary="value"
  * ```
  */
-export function SummaryAttr(value: AttributeValue): AttributeNode {
+export function SummaryAttr(value: AttributeValue): AttrNode {
   return Attr("summary", value);
 }
 
@@ -4054,7 +4054,7 @@ export function SummaryAttr(value: AttributeValue): AttributeNode {
  * // Renders as: tabindex="value"
  * ```
  */
-export function Tabindex(value: AttributeValue): AttributeNode {
+export function Tabindex(value: AttributeValue): AttrNode {
   return Attr("tabindex", value);
 }
 
@@ -4069,7 +4069,7 @@ export function Tabindex(value: AttributeValue): AttributeNode {
  * // Renders as: target="value"
  * ```
  */
-export function Target(value: AttributeValue): AttributeNode {
+export function Target(value: AttributeValue): AttrNode {
   return Attr("target", value);
 }
 
@@ -4084,7 +4084,7 @@ export function Target(value: AttributeValue): AttributeNode {
  * // Renders as: title="value"
  * ```
  */
-export function TitleAttr(value: AttributeValue): AttributeNode {
+export function TitleAttr(value: AttributeValue): AttrNode {
   return Attr("title", value);
 }
 
@@ -4099,7 +4099,7 @@ export function TitleAttr(value: AttributeValue): AttributeNode {
  * // Renders as: translate="value"
  * ```
  */
-export function Translate(value: AttributeValue): AttributeNode {
+export function Translate(value: AttributeValue): AttrNode {
   return Attr("translate", value);
 }
 
@@ -4114,7 +4114,7 @@ export function Translate(value: AttributeValue): AttributeNode {
  * // Renders as: type="value"
  * ```
  */
-export function Type(value: AttributeValue): AttributeNode {
+export function Type(value: AttributeValue): AttrNode {
   return Attr("type", value);
 }
 
@@ -4129,7 +4129,7 @@ export function Type(value: AttributeValue): AttributeNode {
  * // Renders as: usemap="value"
  * ```
  */
-export function Usemap(value: AttributeValue): AttributeNode {
+export function Usemap(value: AttributeValue): AttrNode {
   return Attr("usemap", value);
 }
 
@@ -4144,7 +4144,7 @@ export function Usemap(value: AttributeValue): AttributeNode {
  * // Renders as: valign="value"
  * ```
  */
-export function Valign(value: AttributeValue): AttributeNode {
+export function Valign(value: AttributeValue): AttrNode {
   return Attr("valign", value);
 }
 
@@ -4159,7 +4159,7 @@ export function Valign(value: AttributeValue): AttributeNode {
  * // Renders as: value="value"
  * ```
  */
-export function Value(value: AttributeValue): AttributeNode {
+export function Value(value: AttributeValue): AttrNode {
   return Attr("value", value);
 }
 
@@ -4174,7 +4174,7 @@ export function Value(value: AttributeValue): AttributeNode {
  * // Renders as: valuetype="value"
  * ```
  */
-export function Valuetype(value: AttributeValue): AttributeNode {
+export function Valuetype(value: AttributeValue): AttrNode {
   return Attr("valuetype", value);
 }
 
@@ -4189,7 +4189,7 @@ export function Valuetype(value: AttributeValue): AttributeNode {
  * // Renders as: vspace="value"
  * ```
  */
-export function Vspace(value: AttributeValue): AttributeNode {
+export function Vspace(value: AttributeValue): AttrNode {
   return Attr("vspace", value);
 }
 
@@ -4204,7 +4204,7 @@ export function Vspace(value: AttributeValue): AttributeNode {
  * // Renders as: width="value"
  * ```
  */
-export function Width(value: AttributeValue): AttributeNode {
+export function Width(value: AttributeValue): AttrNode {
   return Attr("width", value);
 }
 
@@ -4219,6 +4219,6 @@ export function Width(value: AttributeValue): AttributeNode {
  * // Renders as: wrap="value"
  * ```
  */
-export function Wrap(value: AttributeValue): AttributeNode {
+export function Wrap(value: AttributeValue): AttrNode {
   return Attr("wrap", value);
 }

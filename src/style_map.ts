@@ -4,7 +4,7 @@
  * @module
  */
 
-import { AttributeNode } from "./attribute.ts";
+import { AttrNode } from "./attribute.ts";
 
 /**
  * A record of CSS style declarations with conditional rendering.
@@ -38,7 +38,7 @@ export type StyleMapInput = Record<string, boolean>;
  * @param styles The conditional CSS declarations.
  * @returns The `style` attribute node.
  */
-export function StyleMap(styles: StyleMapInput): AttributeNode {
+export function StyleMap(styles: StyleMapInput): AttrNode {
   const rules: string[] = [];
 
   for (const declaration of Object.keys(styles)) {
@@ -47,5 +47,5 @@ export function StyleMap(styles: StyleMapInput): AttributeNode {
     }
   }
 
-  return new AttributeNode("style", rules.sort().join("; "));
+  return new AttrNode("style", rules.sort().join("; "));
 }
