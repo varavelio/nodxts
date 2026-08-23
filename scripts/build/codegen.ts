@@ -190,7 +190,10 @@ function generateAttributes(
         ...jsdoc(attr.description, [
           `import { ${func.name}, Input } from "@varavel/nodx";`,
           ``,
-          `const node = Input(${func.name}(true));`,
+          `const node = Input(${func.name}());`,
+          `// Renders as: <input ${attr.name}>`,
+          ``,
+          `const explicit = Input(${func.name}(true));`,
           `// Renders as: <input ${attr.name}>`,
           ``,
           "// When the value is `false`, the attribute is omitted entirely:",
@@ -199,7 +202,7 @@ function generateAttributes(
         ]),
       );
       lines.push(
-        `export function ${func.name}(value: boolean): Node {`,
+        `export function ${func.name}(value: boolean = true): Node {`,
         `  return AttrBool("${attr.name}", value);`,
         `}`,
         ``,

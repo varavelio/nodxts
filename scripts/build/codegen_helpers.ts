@@ -46,11 +46,6 @@ export type Suffix = "El" | "Attr";
  * possible and genuinely dangerous: an exported `Map` function would break
  * every `new Map()` call in modules using named imports, and an exported
  * `Object` function would break every `Object.keys(...)` call.
- *
- * The `map` element therefore becomes `MapEl`, which conveniently matches
- * the Go implementation, where `map` is a reserved keyword. Only globals
- * defined by ECMAScript itself are listed here: they exist in every
- * runtime this library supports.
  */
 export const PRESERVED_GLOBALS: readonly string[] = ["Map", "Object"];
 
@@ -168,9 +163,6 @@ export function createFuncName(
 
 /**
  * Converts a kebab-case (or plain lowercase) name into PascalCase.
- *
- * Mirrors the behavior of the Go implementation's generator:
- * `accept-charset` becomes `AcceptCharset` and `a` stays `A`.
  *
  * @param name The kebab-case name.
  * @returns The PascalCase name.

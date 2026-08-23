@@ -68,11 +68,11 @@ run("ESM", {
     );
   },
 
-  "If and Each": () => {
+  "If and Map": () => {
     assertEquals(nodx.If(false, nodx.Text("no")).render(), "");
     assertEquals(nodx.If(true, () => nodx.Text("yes")).render(), "yes");
     assertEquals(
-      nodx.Ul(nodx.Each(["one", "two"], (item) => nodx.Li(nodx.Text(item)))).render(),
+      nodx.Ul(nodx.Map(["one", "two"], (item) => nodx.Li(nodx.Text(item)))).render(),
       "<ul><li>one</li><li>two</li></ul>",
     );
   },
@@ -110,4 +110,4 @@ if (nodxCjs) {
   console.warn("  (CJS entry not found, skipping)");
 }
 
-console.log("\nNode.js Runtime check passed — ESM + CJS both work in Node.js.\n");
+console.log("\nNode.js Runtime check passed. ESM + CJS both work in Node.js.\n");
