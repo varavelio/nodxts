@@ -1,12 +1,40 @@
 {
+  "name": "@varavel/nodx",
+  "version": "0.0.0",
+  "exports": "./src/index.ts",
+  "license": "MIT",
   "tasks": {
     "format": "deno fmt",
-    "test": "deno test",
-    "build": "deno run -A ./scripts/build.ts 0.1.0"
+    "lint": "deno lint",
+    "check": "deno check",
+    "test": "deno test --allow-read && node ./scripts/test_node.mjs",
+    "ci": "deno fmt --check && deno task lint && deno task check && deno task test",
+    "build": "deno run -A ./scripts/build/main.ts"
   },
+  "exclude": [
+    "./npm"
+  ],
   "imports": {
     "@deno/dnt": "jsr:@deno/dnt@0.43.2",
     "@std/assert": "jsr:@std/assert@1.0.19",
     "@std/path": "jsr:@std/path@1.1.6"
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "singleQuote": false
+  },
+  "publish": {
+    "include": [
+      "src/",
+      "README.md",
+      "LICENSE"
+    ]
   }
 }
