@@ -38,8 +38,6 @@ jobs:
 
       - name: Release in devcontainer
         uses: devcontainers/ci@v0.3
-        env:
-          CLEAN_TAG: ${{ needs.setup.outputs.clean_tag }}
         with:
           push: never
           inheritEnv: true
@@ -68,3 +66,32 @@ jobs:
 
             echo "Publishing to JSR..."
             deno publish
+        env:
+          CLEAN_TAG: ${{ needs.setup.outputs.clean_tag }}
+
+  notify-release-failure:
+    name: Notify release failure
+    runs-on: ubuntu-latest
+    needs: [setup, release]
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    permissions:
+      contents: write
+    timeout-minutes: 5
+    env:
+      TAG: ${{ github.event.release.tag_name }}
+    steps:
+      - name: Update the release description
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          BODY="$(gh release view "${TAG}" --json body --jq '.body')"
+          NOTE=$'\n\n---\n\n> [!WARNING]\n> The release workflow failed. Use the next release instead.'
+
+          if [[ "${BODY}" == *"The release workflow failed"* ]]; then
+            echo "Failure note already present in the release description, skipping"
+            exit 0
+          fi
+
+          gh release edit "${TAG}" --notes "${BODY}${NOTE}"
