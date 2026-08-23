@@ -26,30 +26,35 @@
 
 ---
 
-NodX is a modern and developer-friendly template engine for generating **safe**, **clean**, and
-**maintainable** HTML in TypeScript. Designed for maximum productivity and easy maintenance, it
-combines **simplicity**, **type safety** and **robust formatting**.
+NodX lets you write HTML as plain TypeScript functions. No template strings, no JSX, no new syntax
+to learn.
+
+You get type safety, automatic escaping, and readable code - and the HTML it generates is exactly
+what you'd expect.
 
 ## Key Features
 
-- **Zero Dependencies 📦**: Lightweight and fast, with no external dependencies.
-- **Type Safety 🛡️**: Fully typed APIs ensure you write error-free HTML, even at scale.
-- **Robust Formatting 🧹**: Generated HTML stays readable and consistent.
-- **DX in Mind 🧠**: If you can write HTML and TypeScript, you can write NodX.
-- **Security by Default 🔒**: Text and attribute values are automatically escaped to prevent XSS.
+- **Zero dependencies** - tiny, fast, and easy to keep updated.
+- **Type safe** - your editor catches typos in tags and attributes before you run anything.
+- **Secure by default** - text and attribute values are escaped automatically. No XSS surprises.
+- **Readable output** - what you write is what gets rendered, without hidden magic.
+- **Familiar** - if you know HTML and TypeScript, you already know NodX.
 
-## Quick Start
+## Installation
 
 ```sh
-# From NPM (Node, Deno, Bun, etc)
+# npm (Node, Deno, Bun, etc.)
 npm install --save --save-exact @varavel/nodx
 
-# From JSR (Deno)
+# JSR (Deno)
 deno add --save-exact jsr:@varavel/nodx
 ```
 
-Start building your HTML with intuitive, type-safe functions. Plain strings are automatically
-escaped, just like `Text()`:
+## Quick Start
+
+Pick the import style you like. Both do the same thing.
+
+**A) Named imports - explicit and tree-shakeable:**
 
 ```ts
 import {
@@ -68,18 +73,28 @@ import {
 } from "@varavel/nodx";
 
 const happiness = 100;
-const hideContainer = false;
 
 const page = Group(
   DocType(),
   Html(
-    Head(TitleEl("My NodX Page")),
+    Head(
+      TitleEl("My NodX Page"),
+    ),
     Body(
       Div(
-        ClassMap({ container: true, hidden: hideContainer }),
-        H1(Class("title"), "Welcome to NodX!"),
+        ClassMap({
+          container: true,
+          hidden: false,
+        }),
+        H1(
+          Class("title"),
+          "Welcome to NodX!",
+        ),
         P("This is a type-safe HTML generator for TypeScript."),
-        If(happiness > 90, P(`With NodX, you will be ${happiness}% happy!`)),
+        If(
+          happiness > 90,
+          P(`With NodX, you will be ${happiness}% happy!`),
+        ),
       ),
     ),
   ),
@@ -88,7 +103,43 @@ const page = Group(
 console.log(page.render());
 ```
 
-### Output:
+**B) Namespace import - no need to list everything:**
+
+```ts
+import * as N from "@varavel/nodx";
+
+const happiness = 100;
+
+const page = N.Group(
+  N.DocType(),
+  N.Html(
+    N.Head(
+      N.TitleEl("My NodX Page"),
+    ),
+    N.Body(
+      N.Div(
+        N.ClassMap({
+          container: true,
+          hidden: false,
+        }),
+        N.H1(
+          N.Class("title"),
+          "Welcome to NodX!",
+        ),
+        N.P("This is a type-safe HTML generator for TypeScript."),
+        N.If(
+          happiness > 90,
+          N.P(`With NodX, you will be ${happiness}% happy!`),
+        ),
+      ),
+    ),
+  ),
+);
+
+console.log(page.render());
+```
+
+Both render the same HTML:
 
 ```html
 <!DOCTYPE html>
@@ -106,61 +157,130 @@ console.log(page.render());
 </html>
 ```
 
-## Key Concepts
+> All HTML in this README is formatted for readability. NodX itself emits everything minified by
+> default (no line breaks or extra whitespace) - same content, just compact.
 
-### **Elements made easy**
+From here on we'll use named imports for brevity, but anything like `Div(...)` can be written as
+`N.Div(...)` if you prefer the namespace style.
 
-Every HTML tag is a function! Just call it with child elements, attributes, groups or plain text:
+---
+
+## How it works
+
+### Elements are just functions
+
+Call a tag like a function. Pass children, attributes, groups, or plain text - strings are escaped
+automatically, just like `Text()`.
 
 ```ts
-import { Div, H1, P } from "@varavel/nodx";
+import { Class, Div, H1, P } from "@varavel/nodx";
 
-Div(
+const node = Div(
   Class("container"),
-  H1("Hello, NodX!"),
+  H1(Text("Hello, NodX!")), // Text() is optional, you can use a string directly
   P("Build clean and safe HTML effortlessly."),
 );
+
+console.log(node.render());
 ```
 
-Plain strings like `"Hello"` work exactly like `Text("Hello")` and are always escaped.
+```html
+<div class="container">
+  <h1>Hello, NodX!</h1>
+  <p>Build clean and safe HTML effortlessly.</p>
+</div>
+```
 
-### **Attributes with helpers**
+### Attributes are functions too
 
-Attributes like `class`, `src` and `alt` have their own functions too:
+Same idea for attributes. `Src`, `Alt`, `Href` - you get autocomplete and type checking for all of
+them.
 
 ```ts
 import { Alt, Img, Src } from "@varavel/nodx";
 
-Img(Src("image.jpg"), Alt("A beautiful image"));
+console.log(
+  Img(
+    Src("image.jpg"),
+    Alt("A beautiful image"),
+  ).render(),
+);
 ```
 
-**Boolean attributes** (like `checked`, `disabled` and `required`) are ergonomic by default:
-`Disabled()` is the same as `Disabled(true)`, and `Disabled(false)` omits it.
+```html
+<img
+  src="image.jpg"
+  alt="A beautiful image"
+>
+```
+
+There are boolean attributes e.g.: `Disabled()` means `Disabled(true)`, `Disabled(false)` removes
+it.
 
 ```ts
 import { Checked, Disabled, Input } from "@varavel/nodx";
 
-Input(Checked(), Disabled(false));
-// Output: <input checked>
-```
+console.log(
+  Input(
+    Checked(),
+    Disabled(false),
+  ).render(),
+);
 
-### **Dynamic class management**
+console.log(
+  Input(
+    Checked(false),
+  ).render(),
+);
 
-Use `ClassMap` and `StyleMap` to conditionally include classes and style rules:
-
-```ts
-import { ClassMap, StyleMap } from "@varavel/nodx";
-
-Div(
-  ClassMap({ visible: true, hidden: false }),
-  StyleMap({ "border: 1px solid black": true, "padding: 10px": false }),
-  "Conditional styling made simple!",
+console.log(
+  Input(
+    Disabled(),
+  ).render(),
 );
 ```
 
-### **Control flow**
+```html
+<input checked>
+<input>
+<input disabled>
+```
 
-Use `If` for conditionals and `Map` for loops. `Eval` lets you inline computed nodes:
+### Classes and styles that react to data
+
+`ClassMap` and `StyleMap` keep conditional classes readable. Only truthy entries make it to the
+output.
+
+```ts
+import { ClassMap, Div, StyleMap } from "@varavel/nodx";
+
+const node = Div(
+  ClassMap({
+    visible: true,
+    hidden: false,
+  }),
+  StyleMap({
+    "border: 1px solid black": true,
+    "padding: 10px": false,
+  }),
+  "Conditional styling made simple!",
+);
+
+console.log(node.render());
+```
+
+```html
+<div
+  class="visible"
+  style="border: 1px solid black"
+>
+  Conditional styling made simple!
+</div>
+```
+
+### Conditionals and loops without a template language
+
+No `{{if}}` or `{{each}}`. Just `If`, `Map`, and `Eval`.
 
 ```ts
 import { Div, Eval, Group, If, Li, Map, Ul } from "@varavel/nodx";
@@ -169,68 +289,177 @@ const items = ["one", "two", "three"];
 const isAdmin = true;
 const score = 42;
 
-Group(
-  If(isAdmin, Div("Admin only!")),
-  If(isAdmin, () => Div("Lazily rendered")),
-  Ul(Map(items, (item) => Li(item))),
+const node = Group(
+  If(
+    isAdmin,
+    Div("Admin only!"),
+  ),
+  // lazy version - the function only runs if isAdmin is true
+  If(
+    isAdmin,
+    () => Div("Lazily rendered"),
+  ),
+  Ul(
+    Map(
+      items,
+      (item) => Li(item),
+    ),
+  ),
   Eval(() => score > 40 ? Div("High score!") : Div("Keep trying")),
 );
+
+console.log(node.render());
 ```
 
-### **Fully typed components**
+```html
+<div>
+  Admin only!
+</div>
+<div>
+  Lazily rendered
+</div>
+<ul>
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
+<div>
+  High score!
+</div>
+```
 
-Components are just functions returning nodes:
+`Map` flattens arrays for you, so you don't need to spread. `null`, `undefined`, and `false` are
+ignored - great for inline conditionals.
+
+### Components are just functions
+
+If it returns a `Node`, it's a component. No special API.
 
 ```ts
 import { Button, Class, Div, type Node } from "@varavel/nodx";
 
 function PrimaryButton(label: string): Node {
-  return Button(Class("btn btn-sm", "btn-primary"), label);
+  return Button(
+    Class(
+      "btn btn-sm",
+      "btn-primary",
+    ),
+    label,
+  );
 }
 
-Div(PrimaryButton("Save"), PrimaryButton("Cancel"));
+console.log(
+  Div(
+    PrimaryButton("Save"),
+    PrimaryButton("Cancel"),
+  ).render(),
+);
 ```
 
-### **Naming collisions**
+```html
+<div>
+  <button class="btn btn-sm btn-primary">Save</button>
+  <button class="btn btn-sm btn-primary">Cancel</button>
+</div>
+```
 
-Following the [NodX specification](https://github.com/varavelio/nodx/blob/main/SPEC.md), generated
-functions never collide. When a name would collide, it gets a deterministic suffix:
+With the namespace import it looks the same:
 
-| Reason                     | Example                                                       |
-| -------------------------- | ------------------------------------------------------------- |
-| Element/attribute clash    | `data` → `DataEl`/`DataAttr`, `title` → `TitleEl`/`TitleAttr` |
-| ECMAScript global preserve | `map` → `MapEl`, `object` → `ObjectEl`                        |
+```ts
+import * as N from "@varavel/nodx";
+import type { Node } from "@varavel/nodx";
 
-- `DataEl("hi")` is the `<data>` element; `Data("key", "value")` is the `data-*` attribute.
+function PrimaryButton(label: string): Node {
+  return N.Button(
+    N.Class(
+      "btn btn-sm",
+      "btn-primary",
+    ),
+    label,
+  );
+}
+```
 
-Every other name is the plain PascalCase of the HTML name: `Div(...)`, `Input(...)`, `Class(...)`,
-`Href(...)`.
+### When you need something custom
 
-### **Custom elements and attributes**
-
-When you need something not covered by the generated vocabulary:
+Everything standard is generated for you, but you can always drop down to the primitives:
 
 ```ts
 import { Attr, El, ElVoid } from "@varavel/nodx";
 
-El("my-widget", "Hello");
-ElVoid("my-decoration");
-El("div", Attr("data-user", "7"), "hi");
+console.log(
+  El(
+    "my-widget",
+    "Hello",
+  ).render(),
+);
+
+console.log(
+  ElVoid("my-decoration").render(),
+);
+
+console.log(
+  El(
+    "div",
+    Attr(
+      "data-user",
+      "7",
+    ),
+    "hi",
+  ).render(),
+);
 ```
 
-## Why Choose NodX?
+```html
+<my-widget>
+  Hello
+</my-widget>
+```
 
-|                      | NodX                                                   | Template engine                    | JS framework                        |
-| -------------------- | ------------------------------------------------------ | ---------------------------------- | ----------------------------------- |
-| HTML is written with | native functions (`Div()`, `Class()`)                  | template files with `{{ }}` syntax | JSX / JavaScript                    |
-| Type safety          | full - the compiler validates every tag                | none - typos are runtime surprises | partial - JSX, but still JavaScript |
-| New syntax to learn  | none                                                   | a mini-language                    | JSX + framework concepts            |
-| Built for            | server-rendered HTML, simple UIs, static sites, emails | classic server-rendered pages      | rich, interactive client-side apps  |
+```html
+<my-decoration>
+```
+
+```html
+<div data-user="7">
+  hi
+</div>
+```
+
+`El` is a normal element (with closing tag), `ElVoid` is for void elements (no closing tag), and
+`Attr` lets you create any attribute.
+
+### Naming collisions are already handled
+
+Following the [NodX spec](https://github.com/varavelio/nodx/blob/main/SPEC.md), names that would
+clash get a predictable suffix:
+
+| Why it collides                     | What you use                                                                       |
+| ----------------------------------- | ---------------------------------------------------------------------------------- |
+| Element vs attribute with same name | `DataEl` (element `<data>`) / `Data` (attribute `data-*`), `TitleEl` / `TitleAttr` |
+| Reserved JS global                  | `MapEl` (element `<map>`), `ObjectEl` (element `<object>`)                         |
+
+Everything else is just PascalCase of the HTML name: `Div`, `Input`, `Class`, `Href`. You rarely
+need to think about it - autocomplete shows you the right one.
+
+---
+
+## NodX vs. other approaches
+
+|                 | **NodX**                          | **Template engine**          | **JS framework**         |
+| --------------- | --------------------------------- | ---------------------------- | ------------------------ |
+| **You write**   | functions (`Div()`, `Class()`)    | files with `{{ }}`           | JSX                      |
+| **Type safety** | full - compiler checks every tag  | none - typos fail at runtime | partial                  |
+| **New syntax?** | none                              | its own mini-language        | JSX + framework concepts |
+| **Best for**    | server HTML, emails, static sites | classic server pages         | highly interactive UIs   |
+
+If your page is mostly server-rendered and you want safety without learning a new templating
+language, NodX fits well.
 
 ## Tailwind CSS
 
-If you use TailwindCSS, add this to your VS Code settings so IntelliSense picks up the classes
-inside `Class(...)` and `ClassMap({... })`:
+Get autocomplete for classes inside `Class(...)` and `ClassMap({...})` by adding this to your VS
+Code settings:
 
 ```json
 {
@@ -251,6 +480,8 @@ inside `Class(...)` and `ClassMap({... })`:
 }
 ```
 
+It works with both import styles (`Class(...)` and `N.Class(...)`).
+
 ## License
 
-NodX is open source under the [MIT License](LICENSE).
+MIT - see [LICENSE](LICENSE).
