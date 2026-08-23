@@ -1,8 +1,10 @@
 {
   "tasks": {
-    "test": "deno test"
+    "test": "deno test",
+    "build": "deno run -A ./build.ts 0.1.0"
   },
   "imports": {
+    "@deno/dnt": "jsr:@deno/dnt@0.43.2",
     "@std/assert": "jsr:@std/assert@1"
   }
 }
