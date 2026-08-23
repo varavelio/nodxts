@@ -23,7 +23,7 @@ RUN set -e && \
   # Install system dependencies
   apt-get update -qq && \
   apt-get install -yqq --no-install-recommends \
-  ca-certificates wget curl zip unzip p7zip-full tzdata git tree ripgrep \
+  ca-certificates wget curl zip unzip p7zip-full tzdata git tree ripgrep libatomic1 \
   python3 python3-pip && \
   rm -rf /var/lib/apt/lists/* && \
   # Git config
