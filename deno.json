@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "format": "deno fmt",
     "test": "deno test",
     "build": "deno run -A ./build.ts 0.1.0"
   },
