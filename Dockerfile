@@ -3,7 +3,7 @@
 ##################
 
 # Use debian trixie as the base image
-FROM debian:trixie as tools
+FROM debian:trixie AS tools
 
 # Install Node
 COPY --from=node:26.7.0-slim /usr/local /usr/local

@@ -18,4 +18,4 @@ EOF
 chmod -R 777 /workspaces
 
 # Configure git
-git config core.fileMode false
+git config --global core.fileMode false || true
