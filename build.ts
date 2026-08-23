@@ -8,6 +8,7 @@ await build({
   shims: {
     deno: "dev",
   },
+  test: false,
   compilerOptions: {
     lib: ["ES2025", "DOM"] as LibName[],
     target: "ES2015",
