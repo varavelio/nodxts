@@ -1,24 +1,3 @@
-#!/usr/bin/env -S deno run -A
-
-/**
- * NodX code generator for TypeScript.
- *
- * Fetches the reference data directly from the canonical NodX repository and
- * generates (in memory, without touching `data/` on disk):
- *
- * - `src/generated/elements.ts` — one function per HTML element.
- * - `src/generated/attributes.ts` — one function per HTML attribute.
- * - `src/generated/elements.test.ts` — an exhaustive test per element.
- * - `src/generated/attributes.test.ts` — an exhaustive test per attribute.
- *
- * The naming rules (PascalCase conversion, collision resolution) live in
- * {@link ./codegen_helpers.ts} and are tested separately.
- *
- * Usage: `deno task codegen` or implicitly via `deno task build`.
- *
- * @module
- */
-
 import { join } from "@std/path";
 import {
   conflictsWithKeyword,

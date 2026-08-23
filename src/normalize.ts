@@ -1,10 +1,3 @@
-/**
- * Child normalization: the single place where the flexible {@linkcode
- * NodeChild} inputs are converted into a flat list of ready-to-render nodes.
- *
- * @module
- */
-
 import type { Node, NodeChild } from "./node.ts";
 import { TextNode } from "./text.ts";
 

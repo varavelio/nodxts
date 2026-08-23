@@ -1,9 +1,3 @@
-/**
- * Conditional style management.
- *
- * @module
- */
-
 import { AttrNode } from "./attribute.ts";
 
 /**

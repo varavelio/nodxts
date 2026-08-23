@@ -1,14 +1,4 @@
 /**
- * HTML escaping utilities.
- *
- * NodX escapes all dynamic text and attribute values by default to protect
- * applications against cross-site scripting (XSS) attacks. Raw output is
- * strictly opt-in through the explicit {@linkcode Raw} escape hatch.
- *
- * @module
- */
-
-/**
  * The characters that must be escaped to prevent XSS attacks:
  * `&`, `<`, `>`, `"` and `'`.
  */

@@ -1,13 +1,3 @@
-/**
- * Text nodes: the leaf nodes that hold text content inside elements.
- *
- * Text is **always escaped by default** to protect against XSS attacks. If
- * you ever need to inject raw HTML (e.g. output from a trusted markdown
- * renderer), use the explicit {@linkcode Raw} escape hatch.
- *
- * @module
- */
-
 import { EscapeHTML } from "./escape_html.ts";
 import type { Node } from "./node.ts";
 

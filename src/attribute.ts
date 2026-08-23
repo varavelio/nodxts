@@ -1,12 +1,3 @@
-/**
- * Attribute nodes: name/value pairs that describe HTML elements.
- *
- * Attribute values are **always escaped** at render time to protect against
- * XSS attacks.
- *
- * @module
- */
-
 import type { AttributeValue, Node } from "./node.ts";
 import { EscapeHTML } from "./escape_html.ts";
 import { NOOP_NODE } from "./group.ts";

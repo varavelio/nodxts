@@ -1,14 +1,3 @@
-/**
- * Group nodes: a way to combine multiple nodes without wrapping them in any
- * HTML tag.
- *
- * Groups are what makes loops and conditionals ergonomic in NodX: the result
- * of mapping over a list or rendering an optional node is often "several
- * sibling nodes", which is exactly a group.
- *
- * @module
- */
-
 import type { Node, NodeChild } from "./node.ts";
 import { normalizeChildren } from "./normalize.ts";
 

@@ -1,13 +1,3 @@
-/**
- * Control-flow helpers: conditionals and loops over plain node trees.
- *
- * These helpers are thin conveniences. Thanks to {@linkcode NodeChild}
- * dropping `null`/`undefined`, ternaries like `${ready ? Div() : null}` work
- * out of the box; use these functions when you want to be more explicit.
- *
- * @module
- */
-
 import { GroupNode, NOOP_NODE } from "./group.ts";
 import type { Node, NodeChild } from "./node.ts";
 import { TextNode } from "./text.ts";

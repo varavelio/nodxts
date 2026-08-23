@@ -1,13 +1,3 @@
-/**
- * Pure helpers shared by the code generator.
- *
- * Keeping the naming rules in a small, dependency-free module makes them
- * easy to test exhaustively, which is exactly what
- * {@link ./codegen_helpers.test.ts} does.
- *
- * @module
- */
-
 /** An HTML element as described by `data/elements.json`. */
 export interface El {
   /** The tag name (e.g. `div`, `img`). */

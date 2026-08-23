@@ -1,20 +1,4 @@
 /**
- * The foundational types of NodX.
- *
- * In NodX, everything is a node. There are three kinds of built-in nodes:
- *
- * - **Element nodes**: an HTML element, like `<div>` or `<img>`.
- * - **Attribute nodes**: an HTML attribute, like `class` or `href`.
- * - **Text nodes**: text content inside an element.
- *
- * Anything that implements the {@linkcode Node} interface can be rendered as
- * HTML and used anywhere a node is accepted, which is how custom components
- * and third-party extensions integrate with the library.
- *
- * @module
- */
-
-/**
  * The interface that wraps the basic render methods used by the different
  * NodX node types.
  *

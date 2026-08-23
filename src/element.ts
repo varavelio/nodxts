@@ -1,12 +1,3 @@
-/**
- * Element nodes: the HTML tags that make up a document.
- *
- * Elements contain other nodes: attributes describe them and elements,
- * groups and text live inside them.
- *
- * @module
- */
-
 import type { AttrNode } from "./attribute.ts";
 import { GroupNode } from "./group.ts";
 import type { Node, NodeChild } from "./node.ts";

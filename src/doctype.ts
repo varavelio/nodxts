@@ -1,9 +1,3 @@
-/**
- * Document type helper.
- *
- * @module
- */
-
 import { RawNode } from "./text.ts";
 
 /**
