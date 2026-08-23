@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.vars.outputs.tag }}
+      clean_tag: ${{ steps.vars.outputs.clean_tag }}
+    steps:
+      - name: Extract version from tag
+        id: vars
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "clean_tag=${TAG#v}" >> "$GITHUB_OUTPUT"
+          echo "Tag: $TAG → Clean: ${TAG#v}"
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: setup
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Release in devcontainer
+        uses: devcontainers/ci@v0.3
+        env:
+          CLEAN_TAG: ${{ needs.setup.outputs.clean_tag }}
+        with:
+          push: never
+          inheritEnv: true
+          runCmd: |
+            set -euo pipefail
+
+            echo "Setting deno.json version to $CLEAN_TAG"
+            jq --arg v "$CLEAN_TAG" '.version = $v' deno.json > tmp.json && mv tmp.json deno.json
+            echo "Updated version: $(jq -r .version deno.json)"
+
+            echo "Running CI (includes npm build)..."
+            deno task ci
+
+            echo "Publishing to npm..."
+            cd ./npm
+            echo "Publishing version: $CLEAN_TAG"
+            npm version "$CLEAN_TAG" --no-git-tag-version --allow-same-version
+            if [[ "$CLEAN_TAG" == *"-"* ]]; then
+              NPM_TAG="next"
+            else
+              NPM_TAG="latest"
+            fi
+            echo "Using npm tag: $NPM_TAG"
+            npm publish --provenance --access public --tag "$NPM_TAG"
+            cd ..
+
+            echo "Publishing to JSR..."
+            deno publish
