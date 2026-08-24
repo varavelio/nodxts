@@ -464,6 +464,23 @@ Full API reference — every element, attribute, helper and type, with examples 
 
 If you want to browse what's available or check a specific tag's signature, start there.
 
+## Ecosystem
+
+NodX can be extended with additional libraries that provide ready-to-use components, attributes, and
+server utilities. Here are some projects built on top of NodX:
+
+- [**nodxts-alpine**](https://github.com/varavelio/nodxts-alpine) - Alpine.js attributes for NodX
+  Go.
+- [**nodxts-htmx**](https://github.com/varavelio/nodxts-htmx) - HTMX attributes and server utilities
+  for NodX Go.
+- [**nodxts-lucide**](https://github.com/varavelio/nodxts-lucide) - Beautiful & consistent icons for
+  NodX Go provided by [Lucide](https://lucide.dev/).
+- [**nodxts-simpleicons**](https://github.com/varavelio/nodxts-simpleicons) - The
+  [Simple Icons](https://simpleicons.org/) brand icons set for NodX Go.
+
+> **Building your own NodX library?** We'd love to feature it here! Open a pull request adding your
+> project to this list, and help grow the NodX ecosystem together.
+
 ## Tailwind CSS
 
 Get autocomplete for classes inside `Class(...)` and `ClassMap({...})` by adding this to your VS
